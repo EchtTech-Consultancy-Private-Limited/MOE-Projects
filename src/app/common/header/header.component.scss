@@ -1,0 +1,23 @@
+.bg-light1 {
+    background-color: #4743c9 !important;
+}
+a {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: underline;
+}
+
+.header-title{
+    margin: 0;
+    font-size: 24px;
+}
+
+@media (max-width:768px){
+    .logo-right{
+        display: flex;
+        justify-content: center !important;
+    }
+    .logo-left{
+        display: flex;
+        justify-content: center !important;
+    }
+}
