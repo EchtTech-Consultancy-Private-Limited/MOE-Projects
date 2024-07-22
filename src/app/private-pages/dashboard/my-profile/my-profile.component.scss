@@ -1,0 +1,155 @@
+body{
+    font-family: "Open Sans", sans-serif !important;
+}
+
+p, li, .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-body-2, .mat-typography{
+    font-family: "Open Sans", sans-serif !important;
+}
+a{
+    text-decoration: none !important;
+}
+.my-profile-data-summay {
+    margin-bottom: 1em;
+    background-color: #edfaff;
+    border: 1px solid #9bcee229;
+    font-size: 1em;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 7px 4px;
+    p, li, .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-body-2, .mat-typography{
+        font-family: "Open Sans", sans-serif !important;
+    }
+    
+    .SchoollDetails{
+        display: block;
+        padding: 0;
+        margin: 0;
+        li{
+            font-weight: 600;
+            line-height: 1.7;
+            color: #4c4c4c;
+            span.value {
+                font-weight: normal;
+            }
+            a.back-btn {
+                background: #c4dee7;
+                padding: 2px 5px;
+                border-radius: 3px;
+                color: #224d8a;
+                position: relative;
+                top: 5px;
+                left: 10px;
+                font-weight: 600;
+            }
+            p{
+                margin: 0;
+                font-size: 15px;
+                a{
+                    text-decoration: none;
+                    color: #0a3e58;
+                    &:hover{
+                        color: #0e7093;
+                    }
+                }
+            }
+        }
+    }
+    .data-capture{
+        gap: 2px;
+        align-items: center;
+        p{
+            letter-spacing: 0.8px;
+        }
+        li{
+            border: 1px solid #4743c9 !important;
+            padding:6px 8px !important;
+            background: #f6faff !important;
+            margin: 3px !important;
+            line-height: 1;
+            border-radius: 4px;
+            a{
+                color: #0a3e58;
+                font-weight: normal;
+                font-size: 13px;
+            }
+        }
+       
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        margin: 0;
+        gap: 15px;
+        li{
+            font-weight: 600;
+            line-height: 1.7;
+            color: #4c4c4c;
+            
+        }
+        p{
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #4c4c4c;
+        }
+    }
+    button.btn-dashboard {
+        background: #56728e;
+        border: 0;
+        color: #fff;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 7px;
+        letter-spacing: 0.9px;
+    }
+    p{
+        letter-spacing: 0.8px;
+    }
+}
+
+.profileData-content{
+    .card{
+        padding: 13px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        border: 0;
+    }
+    
+    .note{
+        font-size: 17px;
+        font-weight: 600;
+        color: #343434;
+        letter-spacing: 0.5px;
+        span.round-button {
+            color: #5135c5 !important;
+            border: 1px solid #5135c5 !important;
+            border-radius: 13px;
+            padding: 3px 10px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+    }
+    table{
+        .table-sr-no{
+
+            color: #4743c9;
+        }
+        .table-title{
+
+        }
+        tr{
+           &:not(:last-child){
+                border-bottom: 1px solid #ddd;
+            }
+            td{
+                padding: 15px 2px;
+                input{
+                    border: 0;
+                    border-bottom: 1px solid #ddd;
+                    width: 100%;
+                    padding: 6px 7px;
+                    background: #dddddd42;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}

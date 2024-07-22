@@ -1,0 +1,22 @@
+footer {
+    background-color: #4743c9;
+    width: 100%;
+    padding: 10px 5px;
+    position: fixed;
+    bottom: 0;
+    p{
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    footer {
+      position: static !important;
+      .row{
+        gap: 20px;
+      }
+    }
+    
+  }
+  

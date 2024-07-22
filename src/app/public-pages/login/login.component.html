@@ -1,0 +1,122 @@
+<app-header></app-header>
+<div class="login-container">
+  <div class="container">
+    <div class="login-form d-flex justify-content-center align-items-center">
+      <mat-card>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-md-12">
+              <span class="Line50"></span>
+              <span class="Line40"></span>
+              <span class="Line25"></span>
+            </div>
+            <div class="col-md-7 col-sm-12 patternback BackImage bg-white d-flex align-items-center border-end">
+              <div class="carBbackCenter position-relative px-4">
+                <h2 class="SchoolFacility">
+                  School Profile Facilities Management
+                </h2>
+                <span class="Line566"></span>
+                <p class="mb-4">
+                  <span class="text-Note font-18 font-weight-bold">
+                    Note :
+                  </span>
+                  <span>UDISE code of the school is the Username. Password will be provided by the Block MIS coordinator.</span>
+                </p>
+                <mat-grid-list cols="2" rowHeight="45px" gutterSize="16px">
+                  <mat-grid-tile>
+                    <a href="#" target="_blank" class="btnGk buttonSet loginBox login241 mat-button">
+                      UDISE+ School Management
+                    </a>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <a href="#" target="_blank" class="btnGkGreen buttonSet loginBox login242 mat-button">
+                      Go to UDISE+ Home Page
+                    </a>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <a href="#" target="_blank" class="btnGkGreen buttonSet loginBox login242 mat-button">
+                      Go to UDISE+ Profile Module
+                    </a>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                    <a href="#" target="_blank" class="btnGk buttonSet loginBox login241 mat-button">
+                      Go to UDISE+ Teacher Module
+                    </a>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </div>
+            </div>
+            <div class="col-md-5 bg-white pt-4 pb-4">
+              <form id="loginForm" name="loginForm" action="#" method="post" autocomplete="off" class="m-b-40">
+               
+                  <mat-card-content>
+                    <h3 class="logintitle207">
+                      Login for DCF Data Entry and Monitor
+                    </h3>
+
+                    <mat-form-field class="input-group" appearance="fill">
+                      <mat-label>User Name:</mat-label>
+                      <input matInput placeholder="Enter Your User Name" />
+                    </mat-form-field>
+
+                    <mat-form-field class="input-group" appearance="fill">
+                      <mat-label>Password:</mat-label>
+                      <input matInput placeholder="Enter Your Password" type="password"/>
+                    </mat-form-field>
+
+                    <div class="clearfix">
+                      <div class="float-start">
+                        <label class="float-label">Captcha: </label>
+                      </div>
+                      <div class="float-end">
+                        <label id="captcha-error" class="error" for="captcha"></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <ul class="cap">
+                        <li>
+                          <div id="wwgrp_captcha" class="wwgrp">
+                            <div id="wwctrl_captcha" class="wwctrl">
+                              <input type="text" name="captcha" maxlength="6" value="" id="captcha" class="form-control noSpace form-control-sm" />
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <img src="../../../assets/captcha.png" class="w68" alt="captcha image" id="captchaImage" />
+                        </li>
+                        <li>
+                          <mat-icon aria-hidden="false" aria-label="Refresh icon"></mat-icon>
+                          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="refresh"></mat-icon>
+
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="btnLogin">
+                      <div class="formButton" id="wwctrl_testabc">
+                        <button   [routerLink]="['/dashboard']" id="testabc" class="btnGk1 buttonSet loginBox login242">Login</button>
+                      </div>
+                    </div>
+                    <div class="clearfix auth-link">
+                      <div class="float-start mt-2">
+                        <a href="#" class="waves-effect waves-dark">
+                          <span class="pcoded-mtext">Forgot Password</span>
+                        </a>
+                      </div>
+                      <div class="float-end mt-2">
+                        <a href="#" class="waves-effect waves-dark text-danger">
+                          <span class="pcoded-mtext">Login with Other</span>
+                        </a>
+                      </div>
+                      <div class="float-end mt-2"></div>
+                    </div>
+                  </mat-card-content>
+                
+              </form>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
