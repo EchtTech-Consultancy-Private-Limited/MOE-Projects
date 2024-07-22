@@ -1,3 +1,68 @@
-<p>dashboard works!</p>
-<button [routerLink]="['/my-profile']">My Profile</button>
+
+
+<app-profile-header></app-profile-header>
+<div class="dashbaord">
+    <div class="container">
+       <div class="d-flex align-items-center h-100 justify-content-center">
+         <div class="row d-flex justify-content-center">
+            <div class="col ">
+                <mat-card>
+                    <div class="dashboard-card">
+                     <a>
+                         <img src="../../../assets/documentsIoco.png" alt="documentsIoco">
+                         <h4>Profile & Facility</h4>
+                         </a>
+                    </div>
+                 </mat-card>
+            </div>
+           
+            <div class="col ">
+                <mat-card>
+                    <div class="dashboard-card">
+                     <a href="#">
+                         <img src="../../../assets/teacherIco.png" alt="documentsIoco">
+                         <h4>Teacher</h4>
+                         </a>
+                    </div>
+                 </mat-card>
+            </div>
+            <div class="col ">
+                <mat-card>
+                    <div class="dashboard-card">
+                     <a href="#">
+                         <img src="../../../assets/girlIco.png" alt="documentsIoco">
+                         <h4>Student</h4>
+                         </a>
+                    </div>
+                 </mat-card>
+            </div>
+            <div class="col ">
+                <mat-card>
+                    <div class="dashboard-card">
+                     <a href="#">
+                         <img src="../../../assets/contact-formIco.png" alt="documentsIoco">
+                         <h4>Bulk Prefilled DCF (Zip)</h4>
+                         </a>
+                    </div>
+                 </mat-card>
+            </div>
+
+            <div class="col ">
+                <mat-card>
+                    <div class="dashboard-card">
+                     <a href="#">
+                         <img src="../../../assets/teacherIco.png" alt="documentsIoco">
+                         <h4>Report Module</h4>
+                         </a>
+                    </div>
+                 </mat-card>
+            </div>
+            
+        </div>
+       </div>
+       
+    </div>
+</div>
+<!-- 
+<button [routerLink]="['/my-profile']">My Profile</button> -->
 <router-outlet></router-outlet>
