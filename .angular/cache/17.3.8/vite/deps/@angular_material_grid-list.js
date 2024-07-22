@@ -5,8 +5,8 @@ import {
   MatLineModule,
   coerceNumberProperty,
   setLines
-} from "./chunk-AIVVETKU.js";
-import "./chunk-WZARJGKN.js";
+} from "./chunk-2BKSL7CS.js";
+import "./chunk-EWBONNFL.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -35,7 +35,7 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵqueryRefresh
-} from "./chunk-AKAYTG33.js";
+} from "./chunk-5NKJYOWK.js";
 
 // node_modules/@angular/material/fesm2022/grid-list.mjs
 var _c0 = ["*"];
