@@ -56,16 +56,22 @@ a{
     .data-capture{
         gap: 2px;
         align-items: center;
+        justify-content: end;
         p{
             letter-spacing: 0.8px;
         }
         li{
             border: 1px solid #4743c9 !important;
-            padding:6px 8px !important;
+            padding: 6px 3px !important;
             background: #f6faff !important;
             margin: 3px !important;
             line-height: 1;
             border-radius: 4px;
+            white-space: nowrap;
+            transition: 0.3s ease-in-out;
+            &:hover{
+                box-shadow: 0px 0px 9px #b3b3b3;
+            }
             a{
                 color: #0a3e58;
                 font-weight: normal;
@@ -92,14 +98,19 @@ a{
             color: #4c4c4c;
         }
     }
-    button.btn-dashboard {
-        background: #56728e;
-        border: 0;
+    .btn-dashboard {
+        background: #4743c9;
+        border: 1px solid #4743c9;
         color: #fff;
-        font-weight: 600;
-        padding: 4px 10px;
-        border-radius: 7px;
+        font-weight: 500;
+        padding: 8px 13px;
+        border-radius: 4px;
         letter-spacing: 0.9px;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            background: #fff;
+            color: #4743c9;
+        }
     }
     p{
         letter-spacing: 0.8px;
@@ -107,6 +118,7 @@ a{
 }
 
 .profileData-content{
+    padding-bottom: 100px;
     .card{
         padding: 13px;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -118,6 +130,7 @@ a{
         font-weight: 600;
         color: #343434;
         letter-spacing: 0.5px;
+        padding: 20px 0;
         span.round-button {
             color: #5135c5 !important;
             border: 1px solid #5135c5 !important;
@@ -129,8 +142,9 @@ a{
     }
     table{
         .table-sr-no{
-
             color: #4743c9;
+            font-weight: 600;
+            padding-right: 10px;
         }
         .table-title{
 
@@ -139,17 +153,92 @@ a{
            &:not(:last-child){
                 border-bottom: 1px solid #ddd;
             }
+            td.child {
+                padding-left: 24px !important;
+            }
             td{
                 padding: 15px 2px;
-                input{
-                    border: 0;
+                line-height: 1.5;
+                .mat-mdc-select-placeholder{
+                    line-height: 1 !important; 
+                }
+                .mat-mdc-option{
+                    min-height: 35px !important;
+                }
+                .form-label{
+                    display: flex;
+                }
+                input, .mat-mdc-select, select{
+                    border: 1px solid transparent;
                     border-bottom: 1px solid #ddd;
                     width: 100%;
                     padding: 6px 7px;
                     background: #dddddd42;
                     border-radius: 4px;
+                    // text-transform: uppercase;
+                    font-size: 13px;
+                    transition: 0.2s;
+                    line-height: 2;
+                    &:focus{
+                        outline: none;
+                        border: 1px solid #60d3ff;
+                        /* box-shadow: 0px 0px 5px #2196f3; */
+                        background: #fff;
+                    }
+                }
+                span.label-heading {
+                    color: #4743c9;
+                }
+                .radio-location-type{
+                    input{
+                        width: auto;
+                        margin-right: 10px;
+                        cursor: pointer;
+                    }
+                    label{
+                        cursor: pointer;
+                    }
                 }
             }
+            
         }
     }
+}
+
+.w-33{width: 32% !important;}
+
+table tr td div.mat-mdc-select-panel .mat-mdc-option {
+    min-height: 33px !important;
+    font-size: 15px !important;
+}
+
+.next-button {
+    border: 1px solid transparent;
+    background: #3F51B5;
+    color: #fff;
+    border-radius: 24px;
+    padding: 7px 26px;
+    transition: 0.3s;
+    &:hover{
+        border: 1px solid #3F51B5;
+        background: #fff;
+        color: #3F51B5;
+    }
+}
+.important{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 18px;
+    p{ 
+        color: #bf0000;
+        margin: 0;
+        line-height: 1.8;
+        font-size: 15px;
+    }
+}
+
+.mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-body-2, .mat-typography {
+    font: 400 14px / 20px "Open Sans", sans-serif !important;
+    letter-spacing: .0178571429em;
+    font-family: "Open Sans", sans-serif !important;
 }
