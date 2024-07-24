@@ -8,15 +8,7 @@ p, li, .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-b
 a{
     text-decoration: none !important;
 }
-.mat-mdc-radio-button.mat-accent{
-    --mdc-radio-selected-icon-color: #4743c9 !important; 
-    --mdc-radio-selected-focus-icon-color: #4743c9;
-    --mdc-radio-selected-hover-icon-color: #4743c9;
-    --mdc-radio-selected-icon-color: #4743c9;
-    --mdc-radio-selected-pressed-icon-color: #4743c9;
-    --mat-radio-ripple-color: black;
-    --mat-radio-checked-ripple-color: #4743c9;
-}
+
 .my-profile-data-summay {
     margin-bottom: 1em;
     background-color: #edfaff;
@@ -228,6 +220,7 @@ table tr td div.mat-mdc-select-panel .mat-mdc-option {
     border-radius: 24px;
     padding: 7px 26px;
     transition: 0.3s;
+    cursor: pointer;
     &:hover{
         border: 1px solid #3F51B5;
         background: #fff;
@@ -250,4 +243,21 @@ table tr td div.mat-mdc-select-panel .mat-mdc-option {
     font: 400 14px / 20px "Open Sans", sans-serif !important;
     letter-spacing: .0178571429em;
     font-family: "Open Sans", sans-serif !important;
+}
+
+.mat-mdc-radio-button.mat-accent{
+    --mdc-radio-selected-icon-color: #4743c9 !important; 
+    --mdc-radio-selected-focus-icon-color: #4743c9;
+    --mdc-radio-selected-hover-icon-color: #4743c9;
+    --mdc-radio-selected-icon-color: #4743c9;
+    --mdc-radio-selected-pressed-icon-color: #4743c9;
+    --mat-radio-ripple-color: black;
+    --mat-radio-checked-ripple-color: #4743c9;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: 15px !important;
+    height: 15px !important;
 }
