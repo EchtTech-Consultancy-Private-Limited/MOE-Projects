@@ -5,11 +5,14 @@ import {MatSelectModule} from '@angular/material/select';
 import { ProfileHeaderComponent } from '../../../common/profile-header/profile-header.component';
 import { RouterLink } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
+
 @Component({
-  selector: 'app-my-profile',
+  selector: 'app-my-profile2',
   standalone: true,
   imports: [RouterOutlet, MatFormFieldModule, MatSelectModule, ProfileHeaderComponent, RouterLink, MatRadioModule],
-  templateUrl: './my-profile.component.html',
-  styleUrl: './my-profile.component.scss',
+  templateUrl: './my-profile2.component.html',
+  styleUrl: './my-profile2.component.scss'
 })
-export class MyProfileComponent {}
+export class MyProfile2Component {
+
+}
