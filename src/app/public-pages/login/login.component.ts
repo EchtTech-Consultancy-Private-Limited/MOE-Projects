@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
@@ -24,7 +24,8 @@ import {
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule,HeaderComponent
+    ReactiveFormsModule,
+    HeaderComponent,
   ],
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
   captcha: any;
   userCaptchaInput: any;
   loginForm!: FormGroup;
-  constructor(private _fb: FormBuilder) {
+  constructor(private _fb: FormBuilder, private _route: Router) {
     this.loginForm = this._fb.group({
       userName: [""],
       password: [""],
@@ -57,6 +58,7 @@ export class LoginComponent implements OnInit {
     if (this.captcha === this.loginForm.get("captcha")?.value) {
       alert("login SucessFull");
       console.log(this.loginForm.value);
+      this._route.navigateByUrl("/dashboard");
     } else {
       alert("Invalid Captch");
     }
