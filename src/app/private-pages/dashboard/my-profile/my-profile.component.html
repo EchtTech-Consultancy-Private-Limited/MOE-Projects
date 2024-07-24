@@ -78,10 +78,10 @@
   </div>
 </div>
 
-<div class="profileData-content">
+<div class="profileData-content px-2">
   <div class="container-fluid">
     <p class="note">
-      <span class="round-button"> 1.1 to 1.25</span> Section 1A- Basic School
+      <span class="round-button me-2"> 1.1 to 1.25</span> Section 1A- Basic School
       Profile (Location, Management, Medium of Instruction etc)
     </p>
 
@@ -130,16 +130,18 @@
                   </td>
                   <td>
                     <div class="d-flex align-items-center radio-location-type">
-                      <div class="d-flex align-items-center w-50">
-                        <input matInput id="Rural" type="radio" formControlName="school_location_type"
-                          value="1-Rural" />
-                        <label for="Rural" class="d-block w-100">1-Rural</label>
-                        <label for="Rural" class="d-block w-100">2-Urban</label>
-                      </div>
-
+                      <mat-radio-group name="school_location_type" class="d-flex w-100">
+                        <div class="d-flex align-items-center w-50">
+                          <mat-radio-button id="Rural" value="1-Rural">1-Rural</mat-radio-button>
+                        </div>
+                        <div class="d-flex align-items-center w-50">
+                          <mat-radio-button id="Urban" value="2-Urban">2-Urban</mat-radio-button>
+                        </div>
+                      </mat-radio-group>
                     </div>
-
-
+                    
+                   
+                    
                   </td>
                 </tr>
                 <tr>
@@ -380,6 +382,8 @@
                   </td>
 
                 </tr>
+
+
               </tbody>
             </table>
           </div>
@@ -684,29 +688,34 @@
                   </td>
                   <td>
                     <div class="d-flex align-items-center radio-location-type">
-                      <div class="d-flex align-items-center w-50">
-                        <input matInput id="Yes" type="radio" formControlName="school_location_type" value="1-Yes" />
-                        <label for="Yes" class="d-block w-100">1-Yes</label>
-                      </div>
-                      <div class="d-flex align-items-center w-50">
-                        <input matInput id="no" type="radio" formControlName="school_location_type" value="2-No" />
-                        <label for="no" class="d-block w-100">2-No</label>
-                      </div>
+                      <mat-radio-group name="school_location_type" class="d-flex w-100">
+                        <div class="d-flex align-items-center w-50">
+                          <mat-radio-button id="Yes" value="1-Yes">1-Yes</mat-radio-button>
+                        </div>
+                        <div class="d-flex align-items-center w-50">
+                          <mat-radio-button id="No" value="2-No">2-No</mat-radio-button>
+                        </div>
+                      </mat-radio-group>
                     </div>
-
-
+                    
+                   
+                    
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="col-md-12 d-flex justify-content-center mt-4 mb-2">
-            <button class="next-button" (click)="submitData()">Submit</button>
+            <!-- <a  [routerLink]="['/my-profile']">Next</a> -->
+            <!-- <button class="next-button" [routerLink]="['/my-profile2']">Next</button> -->
+            <a class="next-button" routerLink="/my-profile2">Next</a>
+            <!-- <button class="next-button" >Next</button> -->
           </div>
         </div>
-
+        
       </form>
 
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

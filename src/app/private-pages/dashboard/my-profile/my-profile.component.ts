@@ -1,30 +1,17 @@
-import { Component, OnInit } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatSelectModule } from "@angular/material/select";
-import { ProfileHeaderComponent } from "../../../common/profile-header/profile-header.component";
-import {
-  FormBuilder,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-} from "@angular/forms";
-import { CommonModule } from "@angular/common";
-
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { ProfileHeaderComponent } from '../../../common/profile-header/profile-header.component';
+import { RouterLink } from '@angular/router';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: "app-my-profile",
   standalone: true,
-  imports: [
-    RouterOutlet,
-    MatFormFieldModule,
-    MatSelectModule,
-    ProfileHeaderComponent,
-    ReactiveFormsModule,
-    FormsModule,
-    CommonModule,
-  ],
-  templateUrl: "./my-profile.component.html",
-  styleUrl: "./my-profile.component.scss",
+  imports: [RouterOutlet, MatFormFieldModule, MatSelectModule, ProfileHeaderComponent, RouterLink, MatRadioModule],
+  templateUrl: './my-profile.component.html',
+  styleUrl: './my-profile.component.scss',
 })
 export class MyProfileComponent implements OnInit {
   submitForm!: FormGroup;

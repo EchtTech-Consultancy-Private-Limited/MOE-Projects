@@ -23,6 +23,14 @@ export const routes: Routes = [
       ),
     // children: myProfileChildRoutes,
   },
+  {
+    path: 'my-profile2',
+    loadChildren: () =>
+      import('./routes/my-profile-child2.routes').then(
+        (route) => route.myProfileChil2dRoutes
+      ),
+    // children: myProfileChildRoutes,
+  },
 
   { path: '**', redirectTo: '/login' },
 ];
