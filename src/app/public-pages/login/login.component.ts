@@ -1,17 +1,19 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HeaderComponent } from "../../common/header/header.component";
+import Swal from "sweetalert2";
 import {
   FormBuilder,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
 } from "@angular/forms";
+import { AlertServiceService } from "../../common/aleart.service";
 
 @Component({
   selector: "app-login",
@@ -24,7 +26,8 @@ import {
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule,HeaderComponent
+    ReactiveFormsModule,
+    HeaderComponent,
   ],
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
@@ -33,7 +36,11 @@ export class LoginComponent implements OnInit {
   captcha: any;
   userCaptchaInput: any;
   loginForm!: FormGroup;
-  constructor(private _fb: FormBuilder) {
+  constructor(
+    private _fb: FormBuilder,
+    private _route: Router,
+    private _aleartService: AlertServiceService
+  ) {
     this.loginForm = this._fb.group({
       userName: [""],
       password: [""],
@@ -55,10 +62,11 @@ export class LoginComponent implements OnInit {
 
   validateCaptcha() {
     if (this.captcha === this.loginForm.get("captcha")?.value) {
-      alert("login SucessFull");
+      this._aleartService.swalPopSuccess("Login SuccessFully");
       console.log(this.loginForm.value);
+      this._route.navigateByUrl("/dashboard");
     } else {
-      alert("Invalid Captch");
+      this._aleartService.swalPopError("Invalid Captch");
     }
     return;
   }
