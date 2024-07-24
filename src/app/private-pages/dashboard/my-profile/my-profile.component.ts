@@ -5,16 +5,16 @@ import {MatSelectModule} from '@angular/material/select';
 import { ProfileHeaderComponent } from '../../../common/profile-header/profile-header.component';
 import { RouterLink } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: "app-my-profile",
   standalone: true,
-  imports: [RouterOutlet, MatFormFieldModule, MatSelectModule, ProfileHeaderComponent, RouterLink, MatRadioModule],
+  imports: [RouterOutlet, MatFormFieldModule, MatSelectModule,ReactiveFormsModule, ProfileHeaderComponent, RouterLink, MatRadioModule],
   templateUrl: './my-profile.component.html',
   styleUrl: './my-profile.component.scss',
 })
 export class MyProfileComponent implements OnInit {
-  submitForm!: FormGroup;
+  submitForm: FormGroup;
   constructor(private _fb: FormBuilder) {
     this.submitForm = this.getFormControls();
   }
