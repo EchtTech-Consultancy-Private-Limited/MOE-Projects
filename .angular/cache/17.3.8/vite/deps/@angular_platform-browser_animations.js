@@ -1,4 +1,9 @@
 import {
+  BrowserModule,
+  DomRendererFactory2
+} from "./chunk-N6XCOAOI.js";
+import "./chunk-FHEX4WL3.js";
+import {
   AUTO_STYLE,
   AnimationGroupPlayer,
   AnimationMetadataType,
@@ -6,15 +11,10 @@ import {
   sequence,
   style,
   ɵPRE_STYLE
-} from "./chunk-QCWRYFG7.js";
-import {
-  BrowserModule,
-  DomRendererFactory2
-} from "./chunk-KGU2DPW3.js";
-import "./chunk-SE63PMSA.js";
+} from "./chunk-SMCMBQHA.js";
 import {
   DOCUMENT
-} from "./chunk-XOLWXWGC.js";
+} from "./chunk-V45ZA63T.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
@@ -31,8 +31,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-BLQDOXOD.js";
-import "./chunk-ECLFHY6R.js";
+} from "./chunk-IZ77BRE4.js";
 import {
   __objRest,
   __spreadValues

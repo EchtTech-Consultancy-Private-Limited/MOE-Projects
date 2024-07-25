@@ -1,17 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import { ProfileHeaderComponent } from '../../../common/profile-header/profile-header.component';
-import { RouterLink } from '@angular/router';
-import { MatRadioModule } from '@angular/material/radio';
-import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSelectModule } from "@angular/material/select";
+import { ProfileHeaderComponent } from "../../../common/profile-header/profile-header.component";
+import { RouterLink } from "@angular/router";
+import { MatRadioModule } from "@angular/material/radio";
+import { FormGroup, FormBuilder, ReactiveFormsModule } from "@angular/forms";
 @Component({
   selector: "app-my-profile",
   standalone: true,
-  imports: [RouterOutlet, MatFormFieldModule, MatSelectModule,ReactiveFormsModule, ProfileHeaderComponent, RouterLink, MatRadioModule],
-  templateUrl: './my-profile.component.html',
-  styleUrl: './my-profile.component.scss',
+  imports: [
+    RouterOutlet,
+    MatFormFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    ProfileHeaderComponent,
+    RouterLink,
+    MatRadioModule,
+  ],
+  templateUrl: "./my-profile.component.html",
+  styleUrl: "./my-profile.component.scss",
 })
 export class MyProfileComponent implements OnInit {
   submitForm: FormGroup;
@@ -21,12 +29,12 @@ export class MyProfileComponent implements OnInit {
   ngOnInit(): void {}
   getFormControls() {
     return this._fb.group({
-      school_name: [""],
-      district_name: [""],
-      udise_block: [""],
-      school_location_type: [""],
-      revenue_block_cd_block: [""],
-      village_name_as_Per_lgd: [""],
+      schoolName: [""],
+      districtName: [""],
+      udiseBlockName: [""],
+      schoolLocationType: [""],
+      revenueBlock: [""],
+      villName: [""],
       name_of_gram_panchayat_as_per_lgd: [""],
       urban_local_bodies_as_per_bodies: [""],
       revenue_block_cd_Block_as_per_lgd: [""],
@@ -61,5 +69,13 @@ export class MyProfileComponent implements OnInit {
 
   submitData() {
     console.log(this.submitForm.value);
+    const payload = {
+      schoolName: this.submitForm.value.schoolName,
+      districtName: this.submitForm.value.districtName,
+      udiseBlockName: this.submitForm.value.udiseBlockName,
+      schoolLocationType: this.submitForm.value.schoolLocationType,
+      revenueBlock: this.submitForm.value.revenueBlock,
+      villName: this.submitForm.value.villName,
+    };
   }
 }

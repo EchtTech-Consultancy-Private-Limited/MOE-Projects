@@ -14,6 +14,7 @@ import {
   ReactiveFormsModule,
 } from "@angular/forms";
 import { AlertServiceService } from "../../common/aleart.service";
+import { CommonService } from "../../common/common.service";
 
 @Component({
   selector: "app-login",
@@ -39,7 +40,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _route: Router,
-    private _aleartService: AlertServiceService
+    private _aleartService: AlertServiceService,
+    private _commonService: CommonService
   ) {
     this.loginForm = this._fb.group({
       userName: [""],
@@ -60,14 +62,58 @@ export class LoginComponent implements OnInit {
     this.generateCaptcha();
   }
 
+  //   register() {
+  //     this._commonService.registerUser("testSubm222", "test@123").subscribe(
+  //       (response) => {
+  //         console.log("User registered successfully", response);
+  //       },
+  //       (error) => {
+  //         console.error("Error registering user", error);
+  //       }
+  //     );
+  //   }
+
+  //   validateCaptcha() {
+  //     console.log("this.loginForm.value", this.loginForm);
+  //     const userName = this.loginForm.value.userName;
+  //     const password = this.loginForm.value.password;
+  //     if (this.captcha === this.loginForm.get("captcha")?.value) {
+  //       alert("1");
+  //       this._commonService.loginUser(userName, password).subscribe((res) => {
+  //         console.log("shubham", res);
+  //         alert("2");
+  //         this._aleartService.swalPopSuccess("Login SuccessFully");
+
+  //         // this._route.navigateByUrl("/dashboard");
+  //       });
+  //     } else {
+  //       this._aleartService.swalPopError("Invalid Captch");
+  //     }
+  //     return;
+  //   }
+
   validateCaptcha() {
-    if (this.captcha === this.loginForm.get("captcha")?.value) {
-      this._aleartService.swalPopSuccess("Login SuccessFully");
-      console.log(this.loginForm.value);
-      this._route.navigateByUrl("/dashboard");
+    console.log("this.loginForm.value", this.loginForm.value);
+
+    const userName = this.loginForm.value.userName;
+    const password = this.loginForm.value.password;
+    const captchaValue = this.loginForm.get("captcha")?.value;
+
+    if (this.captcha === captchaValue) {
+      this._commonService.loginUser(userName, password).subscribe({
+        next: (res) => {
+          console.log("shubham", res);
+          this._aleartService.swalPopSuccess("Login Successfully");
+          sessionStorage.setItem("token", res.token);
+          this._route.navigateByUrl("/dashboard");
+        },
+        error: (err) => {
+          console.error("Login Error:", err);
+          this._aleartService.swalPopError("Login Failed");
+        },
+      });
     } else {
-      this._aleartService.swalPopError("Invalid Captch");
+      this._aleartService.swalPopError("Invalid Captcha");
     }
-    return;
   }
 }
