@@ -148,7 +148,7 @@ a{
 .profileData-content{
     padding-bottom: 100px;
     .card{
-        padding: 13px;
+        padding: 17px;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         border: 0;
     }
@@ -333,13 +333,101 @@ table tr td div.mat-mdc-select-panel .mat-mdc-option {
             }
         }
     }
+    .shcoolDashboard {
+        .mat-mdc-select{
+            padding: 3px 10px 4px;
+        }
+        .mat-mdc-select-value {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 8px;
+            font-size: 14px;
+            font-size: 13px;
+            line-height: 1.2 !important;
+        } 
+    }   
 }
 
-.shoolDashboardTableInfo{
-    select{
-        font-size: 14px;
-        color: #514f4f;
-        padding:7px 11px;
-        line-height: 1.2;
+::ng-deep{
+    .shoolDashboardTableInfo{
+        select{
+            font-size: 14px;
+            color: #514f4f;
+            padding:7px 11px;
+            line-height: 1.2;
+        }
+        ul{
+            display: flex;
+            margin: 0;
+            justify-content: end;
+            align-items: center;
+            li{
+                img{
+                    width: 45px;
+                    
+                }
+            }
+        }
+    
+        .tableInfoTab {
+            background: 0 0;
+            transform: skewX(-20deg);
+            max-width: inherit;
+            display: flex;
+            justify-content: center;
+            .tableInfoTabLink {
+                border: 1px solid #b8b9bb;
+                display: flex;
+                width: auto;
+                .tableInfoTabBtn {
+                    padding: 5px 8px;
+                    margin: 3px;
+                    color: black;
+                    border-radius: 3px;
+                    font-weight: 600;
+                    font-size: 15px;
+                    color: #fff;
+                    text-decoration: none;
+                    font-family: 'Open Sans' !important;
+                    font-style: normal !important;
+                    h6 {
+                        transform: skewX(18deg);
+                        font-size: 14px;
+                    }
+                    
+                }        
+        }
+    
+      
+      }
+      .text-green{
+        color: #00a65a;
+      }
+      .bg-green{
+        background-color: #00a65a;
+        color: #fff;
+      }
     }
+}
+.btn-dashboard {
+    background: #4743c9;
+    border: 1px solid #4743c9;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 13px;
+    border-radius: 4px;
+    letter-spacing: 0.9px;
+    transition: 0.3s ease-in-out;
+    &:hover{
+        background: #fff;
+        color: #4743c9;
+    }
+}
+ul{
+    list-style: none;
+}
+.tableInfo .btn-dashboard{
+    padding: 11px 13px !important;
 }

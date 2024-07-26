@@ -66,11 +66,11 @@
     <div class="row">
 
       <div class="col-md-12  mt-2">
-        <div class="d-flex">
+        <div class="d-flex justify-content-between">
           <div class="  ">
-            <button type="button" class="btn-dashboard">Back to Dashboard</button>
+            <button type="button" class="btn-dashboard">Back To School List</button>
           </div>
-          <!-- <button type="button" class="btn-dashboard">State Dashboard</button> -->
+          <button type="button" class="btn-dashboard">Block Dashboard</button>
         </div>
 
       </div>
@@ -85,60 +85,48 @@
     <div class="shcoolDashboard">
          <mat-card class="card">
             <div class="">
-            <!--    <table mat-table >
-              
-                 
-                  <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef> Form Sl. No. </th>
-                    <td mat-cell *matCellDef="let element"> column 1 </td>
-                  </ng-container>
-              
-                  <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef> DCF Serial No. </th>
-                    <td mat-cell *matCellDef="let element"> column 2</td>
-                  </ng-container>
-              
-                  
-                  <ng-container matColumnDef="weight">
-                    <th mat-header-cell *matHeaderCellDef> Form Name </th>
-                    <td mat-cell *matCellDef="let element">  column </td>
-                  </ng-container>
-              
-                  
-                  <ng-container matColumnDef="symbol">
-                    <th mat-header-cell *matHeaderCellDef> Last Modified By Last Updated On </th>
-                    <td mat-cell *matCellDef="let element">  </td>
-                  </ng-container>
-
-                  <ng-container matColumnDef="symbol">
-                    <th mat-header-cell *matHeaderCellDef> Status</th>
-                    <td mat-cell *matCellDef="let element">  </td>
-                  </ng-container>
-              
-                  <tr mat-header-row ></tr>
-                  <tr mat-row ></tr>
-                </table>
-              
-                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                               showFirstLastButtons
-                               aria-label="Select page of periodic elements">
-                </mat-paginator> -->
-
                 <div class="shoolDashboardTableInfo">
 
                     <div class="row mb-3">
                         <div class="col-md-3">
-
                             <div class="form-group">
-                                <label for="localeLang" class="me-2">Select Language</label>
-                                <select name="appLocale" id="localeLang" class="form-control d-inline-block w-auto">
-                                    <option value="en">English</option>
-                                    <option value="hi">Hindi</option>
-                                </select>
+                              <label for="localeLang" class="me-2">Select Language</label>
+                             
+                                <mat-select id="localeLang" name="appLocale" placeholder="Choose a language" [(value)]="selectedLanguage" class="form-control w-auto">
+                                  <mat-option value="en" selected >English</mat-option>
+                                  <mat-option value="hi">Hindi</mat-option>
+                                </mat-select>
+                              
                             </div>
+                            
+                          
                         </div>
                         <div class="col-md-9">
 
+                          <div class="tableInfo">
+                            <ul>
+                              <li>
+                                <button type="button" class="btn-dashboard">Previous Data Snapshot</button>
+                              </li>
+                              <li>
+                                <img src="../../../../assets/new.gif" alt="New">
+                              </li>
+                              <li>
+                                <div class="tableInfoTab flexDisplay float-end ">
+                                  <div class="tableInfoTabLink">
+                                    <a class="tableInfoTabBtn statsContentTab seasonStats" contenteditable="false" style="cursor: pointer;">
+                                      <h6 class="mb-0 text-black">
+                                        Overall Status : <span class="text-green">Need Correction</span>
+                                      </h6>
+                                    </a>
+                                  </div>
+                                    <div class="tableInfoTabLink">
+                                      <a class="tableInfoTabBtn statsContentTab awardsStats bg-green" ><h6 class="mb-0">Data Entry is Currently Active</h6></a>
+                                    </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                     </div>
                 </div>
