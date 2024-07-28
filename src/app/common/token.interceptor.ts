@@ -9,7 +9,9 @@ import { Router } from "@angular/router";
 // };
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = getToken();
+  // const token = getToken();
+  const token =
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MSIsImlhdCI6MTcyMjAxMTkyNSwiZXhwIjoxNzIyMDE1NTI1fQ.OYsPsnyN9KBJ-sr2pdulf3g91hGrzD1v0lcAaBf072k";
   console.log(sessionStorage.getItem("token"));
   const router = inject(Router);
 

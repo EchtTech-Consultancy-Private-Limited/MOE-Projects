@@ -176,8 +176,8 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="name_of_gram_panchayat_as_per_lgd"
-                      placeholder="Enter Gram Panchayat Name" value="" />
+                    <input matInput type="text" formControlName="gramPanchName" placeholder="Enter Gram Panchayat Name"
+                      value="" />
                   </td>
                 </tr>
                 <tr>
@@ -192,8 +192,8 @@
                     </span>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="urban_local_bodies_as_per_bodies"
-                      placeholder="Enter Urban Local bodies Name" value="" />
+                    <input matInput type="text" formControlName="urbanLB" placeholder="Enter Urban Local bodies Name"
+                      value="" />
                   </td>
                 </tr>
                 <tr>
@@ -208,7 +208,7 @@
                       LGD) </span>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="revenue_block_cd_Block_as_per_lgd"
+                    <input matInput type="text" formControlName="wardName"
                       placeholder="Enter Revenue Block /CD Block Name" value="" />
                   </td>
                 </tr>
@@ -217,7 +217,7 @@
                     <span class="table-sr-no">1.5</span> School Address<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="school_address" placeholder="Enter School Address"
+                    <input matInput type="text" formControlName="schoolAddress" placeholder="Enter School Address"
                       value="" />
                   </td>
                 </tr>
@@ -226,7 +226,8 @@
                     <span class="table-sr-no">1.6</span> Pin Code<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="pin_code" placeholder="Enter Pin Code" value="" />
+                    <input matInput type="text" maxlength="6" formControlName="pinCode" placeholder="Enter Pin Code"
+                      value="" />
                   </td>
                 </tr>
                 <tr>
@@ -238,8 +239,7 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="cluster_resource_center" placeholder="Enter Name CRC"
-                      value="" />
+                    <input matInput type="text" formControlName="crcName" placeholder="Enter Name CRC" value="" />
                   </td>
                 </tr>
 
@@ -249,7 +249,7 @@
                       Constituency</span>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="assembly_constituency"
+                    <input matInput type="text" formControlName="asmblyConstName"
                       placeholder="Enter Assembly Constituency Name" value="" />
                   </td>
                 </tr>
@@ -263,7 +263,7 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="parliamentary_constituency"
+                    <input matInput type="text" formControlName="parlmntConstName"
                       placeholder="Enter Parliamentary Constituency Name" value="" />
                   </td>
                 </tr>
@@ -283,18 +283,18 @@
                     <div class="d-flex justify-content-between align-items-center gap-3">
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(a)</span> STD Code</label>
-                        <input matInput type="number" formControlName="std_code" placeholder="Enter STD Code"
+                        <input matInput type="text" maxlength="8" formControlName="stdCode" placeholder="Enter STD Code"
                           value="" />
                       </div>
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Landline Number</label>
-                        <input matInput type="number" formControlName="landline_number"
+                        <input matInput type="text" [maxlength]="10" formControlName="landlineNo"
                           placeholder="Enter Landline Number" value="" />
                       </div>
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Mobile Number</label>
-                        <input matInput type="number" formControlName="mobile_number" placeholder="Enter Mobile Number"
-                          value="" />
+                        <input matInput type="text" [maxlength]="10" formControlName="mobileNo"
+                          placeholder="Enter Mobile Number" value="" />
                       </div>
                     </div>
 
@@ -311,8 +311,8 @@
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(e)</span> Website of the
                           School</label>
-                        <input matInput type="text" formControlName="website_of_the_school"
-                          placeholder="Enter Website of the School" value="" />
+                        <input matInput type="text" formControlName="website" placeholder="Enter Website of the School"
+                          value="" />
                       </div>
 
                     </div>
@@ -338,7 +338,7 @@
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(a)</span> HoS / In-Charge
                           Type</label>
-                        <mat-select panelClass="custom-select-panel">
+                        <mat-select formControlName="hosInchargeTypeD" panelClass="custom-select-panel">
                           <mat-option [value]="1">1- Head Master/Principal</mat-option>
                           <mat-option [value]="2">2- Asst. Head Master/Vice Principal</mat-option>
                           <mat-option [value]="3">3-Acting Head Teacher</mat-option>
@@ -352,12 +352,12 @@
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(b)</span> HoS /In-Charge
                           Name</label>
-                        <input matInput type="text" formControlName="urban_local_bodies_as_per_bodies"
-                          placeholder="Enter Urban Local bodies Name" value="" />
+                        <input matInput type="text" formControlName="hos" placeholder="Enter Urban Local bodies Name"
+                          value="" />
                       </div>
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Mobile Number</label>
-                        <input matInput type="text" formControlName="urban_local_bodies_as_per_bodies"
+                        <input matInput type="text" maxlength="10" formControlName="hosMobNo"
                           placeholder="Enter Urban Local bodies Name" value="" />
                       </div>
                     </div>
@@ -370,7 +370,7 @@
                     <div class="d-flex justify-content-start align-items-center gap-3 w-33">
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(d)</span> HoS Email</label>
-                        <input matInput type="text" formControlName="urban_local_bodies_as_per_bodies"
+                        <input matInput type="text" formControlName="hosEmail"
                           placeholder="Enter Urban Local bodies Name" value="" />
                       </div>
 
@@ -404,7 +404,7 @@
 
                   </td>
                   <td>
-                    <mat-select>
+                    <mat-select formControlName="managementGroupOfSchoolD">
                       <mat-option [value]="1"> A- State Government</mat-option>
                       <mat-option [value]="2">B – Govt. Aided</mat-option>
                       <mat-option [value]="3">C- Private Unaided</mat-option>
@@ -425,7 +425,7 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="number" formControlName="management_code_of_school"
+                    <input matInput type="number" formControlName="schoolManagementGroup"
                       placeholder="Management Code of School" value="" />
                   </td>
                 </tr>
@@ -462,7 +462,7 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="school_category" placeholder="Enter School Category"
+                    <input matInput type="text" formControlName="schoolCategoryCode" placeholder="Enter School Category"
                       value="" />
                   </td>
                 </tr>
@@ -471,7 +471,7 @@
                     <span class="table-sr-no">1.15</span> Type of the School<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <mat-select>
+                    <mat-select formControlName="typeOfSchoolD">
                       <mat-option [value]="1">1-Boys</mat-option>
                       <mat-option [value]="2">2-Girls</mat-option>
                       <mat-option [value]="3">3-Co-Educational</mat-option>
@@ -488,7 +488,7 @@
                     </div>
                   </td>
                   <td>
-                    <mat-select>
+                    <mat-select formControlName="affiliateBoardD">
                       <mat-option [value]="1">1-CBSE</mat-option>
                       <mat-option [value]="2">2-State Board</mat-option>
                       <mat-option [value]="3">3-ICSE</mat-option>
@@ -507,7 +507,7 @@
                       Sections<sup>&#64;&#64;</sup></span>
                   </td>
                   <td>
-                    <mat-select>
+                    <mat-select formControlName="affiliateBoardD2">
                       <mat-option [value]="1">1-CBSE</mat-option>
                       <mat-option [value]="2">2-State Board</mat-option>
                       <mat-option [value]="3">3-ICSE</mat-option>
@@ -536,7 +536,7 @@
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(a)</span> Respondent Type</label>
 
-                        <mat-select>
+                        <mat-select formControlName="respondentTypeD">
                           <mat-option [value]="1"> 1- Head of the School/In-Charge</mat-option>
                           <mat-option [value]="2">2-Teacher</mat-option>
                           <mat-option [value]="3">3-School Administration Staff/Official/Clerk</mat-option>
@@ -547,13 +547,13 @@
                       </div>
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Respondent Name</label>
-                        <input matInput type="text" formControlName="respondent_name"
-                          placeholder="Enter Respondent Name" value="" />
+                        <input matInput type="text" formControlName="respondentName" placeholder="Enter Respondent Name"
+                          value="" />
                       </div>
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Mobile Number</label>
-                        <input matInput type="number" formControlName="mobile_number" placeholder="Enter Mobile Number"
-                          value="" />
+                        <input matInput type="text" maxlength="10" formControlName="respondentMobNo"
+                          placeholder="Enter Mobile Number" value="" />
                       </div>
 
                     </div>
@@ -561,7 +561,7 @@
 
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Respondent Email</label>
-                        <input matInput type="email" formControlName="respondent_email"
+                        <input matInput type="email" formControlName="respondentEmail"
                           placeholder="Enter Respondent Email" value="" />
                       </div>
                     </div>
@@ -579,11 +579,29 @@
                   </td>
                   <td>
                     <div class="d-flex align-items-center gap-2">
-                      <input matInput type="date" formControlName="academic_session_start"
-                        placeholder="Enter Start Date" value="" />
+                      <!-- <input matInput type="date" formControlName="sessionStartDate" placeholder="Enter Start Date"
+                        value="" /> -->
+                      <mat-form-field appearance="outline" class="w-100">
+                        <input matInput formControlName="sessionStartDate" [matDatepicker]="picker"
+                          placeholder="Choose a date" readonly="true" (click)="picker.open()" />
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error>
+                          This field is required
+                        </mat-error>
+                      </mat-form-field>
                       to
-                      <input matInput type="date" formControlName="academic_session_end_date"
-                        placeholder="Enter End Date" value="" />
+                      <!-- <input matInput type="date" formControlName="sessionEndDate" placeholder="Enter End Date"
+                        value="" /> -->
+                      <mat-form-field appearance="outline" class="w-100">
+                        <input matInput formControlName="sessionEndDate" [matDatepicker]="picker2"
+                          placeholder="Choose a date" readonly="true" (click)="picker2.open()" />
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                        <mat-error>
+                          This field is required
+                        </mat-error>
+                      </mat-form-field>
                     </div>
 
                   </td>
@@ -597,8 +615,17 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="date" formControlName="year_of_establishment_of_school"
-                      placeholder="Enter Establishment Date" value="" />
+                    <!-- <input matInput type="date" formControlName="yoe" placeholder="Enter Establishment Date" value="" />
+                      -->
+                    <mat-form-field appearance="outline" class="w-100">
+                      <input matInput formControlName="yoe" [matDatepicker]="picker3" placeholder="Choose a date"
+                        readonly="true" (click)="picker3.open()" />
+                      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                      <mat-datepicker #picker3></mat-datepicker>
+                      <mat-error>
+                        This field is required
+                      </mat-error>
+                    </mat-form-field>
                   </td>
                 </tr>
 
@@ -617,16 +644,17 @@
                     <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(a)</span> Primary</label>
-                        <input matInput type="number" formControlName="primary" placeholder="Enter Primary" value="" />
-                      </div>
-                      <div class="input-group">
-                        <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Upper Primary</label>
-                        <input matInput type="number" formControlName="upper_primary" placeholder="Enter Upper Primary"
+                        <input matInput type="number" formControlName="yorPrimary" placeholder="Enter Primary"
                           value="" />
                       </div>
                       <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Upper Primary</label>
+                        <input matInput type="number" formControlName="yorUpperPrimary"
+                          placeholder="Enter Upper Primary" value="" />
+                      </div>
+                      <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Secondary</label>
-                        <input matInput type="number" formControlName="secondary" placeholder="Enter Secondary"
+                        <input matInput type="number" formControlName="yorSecondary" placeholder="Enter Secondary"
                           value="" />
                       </div>
 
@@ -635,7 +663,7 @@
 
                       <div class="input-group">
                         <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Higher Secondary</label>
-                        <input matInput type="number" formControlName="higher_secondary"
+                        <input matInput type="number" formControlName="yorHSecondary"
                           placeholder="Enter Higher  Secondary" value="" />
                       </div>
                     </div>
@@ -706,7 +734,7 @@
           <div class="col-md-12 d-flex justify-content-center mt-4 mb-2">
             <!-- <a  [routerLink]="['/my-profile']">Next</a> -->
             <!-- <button class="next-button" [routerLink]="['/my-profile2']">Next</button> -->
-            <a class="next-button" routerLink="/my-profile2">Next</a>
+            <a class="next-button" (click)="submitData()">Next</a>
             <!-- <button class="next-button" >Next</button> -->
           </div>
         </div>

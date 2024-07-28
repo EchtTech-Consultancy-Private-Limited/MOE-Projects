@@ -29,4 +29,30 @@ export class CommonService {
     const body = { username, password };
     return this.http.post(`${environment.baseUrl}/login`, body, { headers });
   }
+
+  saveSchoolProfile(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+    const body = { payload };
+    return this.http.post(`${environment.baseUrl}/login`, body, { headers });
+  }
+  saveSchoolProfile2(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+    const udiseId = "1234567890";
+    const body = payload;
+    return this.http.post(
+      "http://8788-103-208-68-197.ngrok-free.app/udise/schools/1234567890/form2",
+      body,
+      { headers }
+    );
+  }
+
+  getProfileDataOne() {
+    return this.http.get(
+      "http://8788-103-208-68-197.ngrok-free.app/udise/schools/1234567890/form2"
+    );
+  }
 }
