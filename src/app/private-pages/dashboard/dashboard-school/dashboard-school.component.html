@@ -1,0 +1,175 @@
+<div class="my-profile-data-summay">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="SchoollDetails">
+          <li>
+            <p>
+              School :
+              <span class="value"><a href="#">Abhoynagar English Medium School Pry</a></span>
+            </p>
+          </li>
+          <li>
+            <p>Category : <span class="value">1 - Primary</span></p>
+          </li>
+          <li class="d-flex">
+            <div>
+              <p>UDISE+ Code : <span class="value">16020801111</span></p>
+              <p><span class="value"> </span></p>
+            </div>
+
+          </li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <div class="">
+          <ul class="data-capture">
+            <p class="d-inline-block">Data Capture Format :</p>
+
+            <li class="active">
+              <a href="#"> 1.1 to 1.25</a>
+            </li>
+
+            <li>
+              <a href="#"> 1.26 to 1.36</a>
+            </li>
+
+
+            <li class="class6">
+              <a href="#">1.55.1 to 1.55.20</a>
+            </li>
+
+            <li class="class6">
+              <a href="#"> 1.56 to 1.59</a>
+            </li>
+
+            <li>
+              <a href="#">2.1 to 2.6</a>
+            </li>
+
+            <!-- <li>
+              <a href="#"> 2.7 to 2.19</a>
+            </li>
+
+            <li>
+              <a href="#">2.20 to 2.23</a>
+            </li>
+
+            <li>
+              <a href="#">2.24 to 2.28</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-12  mt-2">
+        <div class="d-flex justify-content-between">
+          <div class="  ">
+            <button type="button" class="btn-dashboard">Back To School List</button>
+          </div>
+          <button type="button" class="btn-dashboard">Block Dashboard</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="profileData-content px-2">
+  <div class="container-fluid">
+   
+
+    <div class="shcoolDashboard">
+         <mat-card class="card">
+            <div class="">
+                <div class="shoolDashboardTableInfo">
+
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                              <label for="localeLang" class="me-2">Select Language</label>
+                             
+                                <mat-select id="localeLang" name="appLocale" placeholder="Choose a language" [(value)]="selectedLanguage" class="form-control w-auto">
+                                  <mat-option value="en" selected >English</mat-option>
+                                  <mat-option value="hi">Hindi</mat-option>
+                                </mat-select>
+                              
+                            </div>
+                            
+                          
+                        </div>
+                        <div class="col-md-9">
+
+                          <div class="tableInfo">
+                            <ul>
+                              <li>
+                                <button type="button" class="btn-dashboard">Previous Data Snapshot</button>
+                              </li>
+                              <li>
+                                <img src="../../../../assets/new.gif" alt="New">
+                              </li>
+                              <li>
+                                <div class="tableInfoTab flexDisplay float-end ">
+                                  <div class="tableInfoTabLink">
+                                    <a class="tableInfoTabBtn statsContentTab seasonStats" contenteditable="false" style="cursor: pointer;">
+                                      <h6 class="mb-0 text-black">
+                                        Overall Status : <span class="text-green">Need Correction</span>
+                                      </h6>
+                                    </a>
+                                  </div>
+                                    <div class="tableInfoTabLink">
+                                      <a class="tableInfoTabBtn statsContentTab awardsStats bg-green" ><h6 class="mb-0">Data Entry is Currently Active</h6></a>
+                                    </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                				
+                <table>
+                    <thead>
+                        <th>Form Sl. No. </th>
+                        <th>DCF Serial No.</th>
+                        <th>Form Name </th>
+                        <th>Last Modified By Last Updated On</th>
+                        <th>Status</th>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                <p>Section 1- School Profile (Location, Structure, Management and Medium of Instruction)</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>1 </td>
+                            <td>1.1 to 1.26</td>
+                            <td>Section 1A-  Basic School Profile (Location, Management, Medium of Instruction etc)</td>
+                            <td>16030600306 (SCHOOL USER) 25/07/2024</td>
+                            <td>Completed</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>1.27 to 1.36</td>
+                            <td>School Others Details</td>
+                            <td>(SCHOOL USER) &#64; 25/07/2024</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              
+        </mat-card>
+    </div>
+ 
+ 
+  </div>
+</div>
+<router-outlet></router-outlet>

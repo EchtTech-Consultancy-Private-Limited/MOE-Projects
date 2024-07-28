@@ -31,6 +31,22 @@ export const routes: Routes = [
       ),
     // children: myProfileChildRoutes,
   },
+  {
+    path: 'dashboardSchoolInstruction',
+    loadChildren: () =>
+      import('./routes/dashboardSchoolInstruction.routes').then(
+        (route) => route.dashboardSchoolInstruction
+      ),
+    // children: myProfileChildRoutes,
+  },
+  {
+    path: 'dashboardSchool',
+    loadChildren: () =>
+      import('./routes/dashboardSchool.routes').then(
+        (route) => route.dashboardSchool
+      ),
+    // children: myProfileChildRoutes,
+  },
 
   { path: '**', redirectTo: '/login' },
 ];
