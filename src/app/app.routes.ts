@@ -47,6 +47,22 @@ export const routes: Routes = [
       ),
     // children: myProfileChildRoutes,
   },
+  {
+    path: 'blockDashboard',
+    loadChildren: () =>
+      import('./routes/blockDashboard.routes').then(
+        (route) => route.blockDashboard
+      ),
+    // children: myProfileChildRoutes,
+  },
+  {
+    path: 'dashboardSchoolwise',
+    loadChildren: () =>
+      import('./routes/dashboardSchoolwise.routes').then(
+        (route) => route.dashboardSchoolwise
+      ),
+    // children: myProfileChildRoutes,
+  },
 
   { path: '**', redirectTo: '/login' },
 ];
