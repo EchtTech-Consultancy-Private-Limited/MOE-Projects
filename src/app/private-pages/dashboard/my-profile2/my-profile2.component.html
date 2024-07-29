@@ -125,19 +125,39 @@
                   </td>
                   <td>
 
-                    <mat-select formControlName="isResidentialSchool">
+                    <!-- <mat-select formControlName="isResidentialSchool">
                       <mat-option [value]=""> Select</mat-option>
                       <mat-option [value]="true">Yes</mat-option>
                       <mat-option [value]="false">NO</mat-option>
-                      <!-- <mat-option [value]="4"> 3 - Non-Residential</mat-option> -->
                     </mat-select>
                     <div
                       *ngIf="submitForm.get('isResidentialSchool')?.invalid && submitForm.get('isResidentialSchool')?.touched">
                       <span style="color: red; padding-left: 12px;"
                         *ngIf="submitForm.get('isResidentialSchool')?.hasError('required')">This field is
                         required</span>
-                    </div>
+                    </div> -->
 
+
+                    <div class="d-flex align-items-center radio-location-type">
+                      <mat-radio-group formControlName="isResidentialSchool" class="d-flex w-100">
+                        <div class="d-flex align-items-center w-50">
+                          <mat-radio-button [value]="true">Yes</mat-radio-button>
+                        </div>
+                        <div class="d-flex align-items-center w-50">
+                          <mat-radio-button [value]="false">No</mat-radio-button>
+                        </div>
+
+                       
+                      </mat-radio-group>
+
+                     
+                    </div>
+                    <div
+                      *ngIf="submitForm.get('isResidentialSchool')?.invalid && submitForm.get('isResidentialSchool')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('isResidentialSchool')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
 
