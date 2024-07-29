@@ -109,26 +109,26 @@
                    <div class="opreation">
                     <ul>
                         <li>Operation</li>
-                        <li class="operation-link">Get DCF By UDISE CODE</li>
-                        <li class="operation-link"> Previous Data Snapshot </li>
+                        <li class="operation-link"><a>Get DCF By UDISE CODE</a> </li>
+                        <li class="operation-link"> <a>Previous Data Snapshot</a> </li>
                         <li>
-                            <div>
+                            <div class="d-flex justify-content-between align-items-center">
                                 <div>
                                     Category wise School Count
                                 </div>
                                 <div>
-                                    <span class="view-eye"> </span>
+                                    <a (click)="openDialog()" class="view-btn"><i class="fa-solid fa-eye"></i></a>
+                                    <!-- <span class="view-eye"> </span> -->
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div>
+                            <div class="d-flex justify-content-between align-items-center">
                                 <div>
                                     Management wise School Count
                                 </div>
                                 <div>
-                                    <span class="view-eye"> </span>
-                                  
+                                    <a (click)="openDialog()" class="view-btn cursor-pointer"><i class="fa-solid fa-eye"></i></a>
                                 </div>
                             </div>
                         </li>

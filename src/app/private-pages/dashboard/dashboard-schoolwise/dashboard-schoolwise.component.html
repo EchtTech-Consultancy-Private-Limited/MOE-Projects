@@ -1,6 +1,134 @@
-<p>dashboard-schoolwise works!</p>
-<p>dashboard-schoolwise works!</p>
-<p>dashboard-schoolwise works!</p>
-<p>dashboard-schoolwise works!</p>
-<p>dashboard-schoolwise works!</p>
-<p>dashboard-schoolwise works!</p>
+<div class="my-profile-data-summay">
+    <div class="container-fluid">
+     <div class="row d-flex align-items-center">
+        <div class="col-md-6">
+            <p class="m-0 fw-bold"> Block  : <span class="value"><a>DURGACHOWMUHANI</a></span></p>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+            <button  type="button" class="btn-dashboard">Block Dashboard</button>
+        </div>
+     </div>
+    </div>
+  </div>
+  
+  <div class="profileData-content px-2">
+    <div class="container-fluid">
+        <div class="mat-elevation-z8">
+            
+                <mat-card-header>
+                  <mat-card-title>School Data</mat-card-title>
+                </mat-card-header>
+               
+                <mat-card-content>
+
+                    <div class="controls-container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="page-size-container">
+                                    <label>Items per page</label>
+                                    <!-- <select (change)="changePageSize($event.target.value)" class="form-control w-auto">
+                                        <option [value]="undefined" disabled selected>Select items per page</option>
+                                        <option *ngFor="let size of [5, 10, 20, 50]" [value]="size">
+                                          {{size}}
+                                        </option>
+                                      </select> -->
+
+                                  </div>
+                            </div>
+                            <div class="col d-flex justify-content-end">
+                                <div class="search-container d-flex align-items-center gap-3">
+                                    <label for="">Search</label>
+                                    <input matInput (keyup)="applyFilter($event)" placeholder="Search elements" class="form-control w-auto">
+
+                                  </div>
+                            </div>
+                        </div>
+                       
+                      </div>
+                      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                        <ng-container matColumnDef="position">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+                          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                        </ng-container>
+                  
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                  
+                        <ng-container matColumnDef="weight">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
+                          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                        </ng-container>
+                  
+                        <ng-container matColumnDef="symbol">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
+                          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                        </ng-container>
+                  
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>
+                      <mat-paginator  showFirstLastButtons></mat-paginator>
+                     
+                </mat-card-content>
+            
+              
+          </div>
+          
+  
+      <div class="shcoolDashboard">
+           <mat-card class="card">
+              <div class="">
+                 <div class="breadcrumb">
+                    <ul>
+                        <li><a>State Name</a></li>
+                        <li><a>District Name</a></li>
+                        <li><a>Block Name</a></li>
+                        <li>DURGACHOWMUHANI</li>
+
+                    </ul>
+                 </div>
+                                  
+                  <table>
+                      <thead>
+                          <th>Form Sl. No. </th>
+                          <th>DCF Serial No.</th>
+                          <th>Form Name </th>
+                          <th>Last Modified By Last Updated On</th>
+                          <th>Status</th>
+                      </thead>
+  
+                      <tbody>
+                          <tr>
+                              <td colspan="5">
+                                  <p>Section 1- School Profile (Location, Structure, Management and Medium of Instruction)</p>
+                              </td>
+                          </tr>
+  
+                          <tr>
+                              <td>1 </td>
+                              <td>1.1 to 1.26</td>
+                              <td>Section 1A-  Basic School Profile (Location, Management, Medium of Instruction etc)</td>
+                              <td>16030600306 (SCHOOL USER) 25/07/2024</td>
+                              <td>Completed</td>
+                          </tr>
+  
+                          <tr>
+                              <td>2</td>
+                              <td>1.27 to 1.36</td>
+                              <td>School Others Details</td>
+                              <td>(SCHOOL USER) &#64; 25/07/2024</td>
+                              <td>Completed</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+                
+          </mat-card>
+      </div>
+   
+   
+    </div>
+  </div>
+ 

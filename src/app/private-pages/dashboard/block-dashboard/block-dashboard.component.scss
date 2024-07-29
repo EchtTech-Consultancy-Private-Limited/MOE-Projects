@@ -145,7 +145,7 @@ p.note-date {
         }
         thead{
             th{
-                background-color: #2b63df;
+                background-color: #224d8a;
                 color: #fff;
                 font-size: 14px;
                 padding: 13px 10px;
@@ -224,8 +224,12 @@ ul{
         li{
             padding: 15px 10px;
             border-radius: 3px;
+            transition: 0.2s ease-in-out;
             &:not(:last-child){
                 margin-bottom: 10px;
+                &:hover{
+                    transform: scale(0.95);
+                }
             }
            
             &:nth-child(1), &:nth-child(6){
@@ -238,24 +242,39 @@ ul{
                 background-color: #033070;
                 color: #fff;
             }
+           
         }
     }
     .operation-link{
         background-color: #e7e7e7;
         font-weight: 500;
-        text-decoration: underline;
+        cursor: pointer;
+        &::before{
+            content: '\f105';
+            font-family: 'fontAwesome';
+            padding-right: 6px;
+        }
+        a{
+            text-decoration: underline !important;
+          
+        }
+
     }
 }
 
 .view-btn {
     background: #033070;
+    border: 1px solid #033070;
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
+    transition: 0.3 ease-in-out;
     cursor: pointer;
+    &:hover{
+     background-color: #fff;
+     color: #033070;
+    }
 }
-
-.operation-link::before {
-    content: '\f054';
-    font-family: 'FontAwesome';
+.cursor-pointer{
+    cursor: pointer;
 }

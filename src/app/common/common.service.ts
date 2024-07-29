@@ -27,7 +27,13 @@ export class CommonService {
       "Content-Type": "application/json",
     });
     const body = { username, password };
-    return this.http.post(`${environment.baseUrl}/login`, body, { headers });
+    // return this.http.post(`${environment.baseUrl}/login`, body, { headers });
+
+    return this.http.post(
+      "http://5aff-2402-e280-4117-34-c9ea-b3d-6560-660a.ngrok-free.app/users/login",
+      body,
+      { headers }
+    );
   }
 
   saveSchoolProfile(payload: any): Observable<any> {
@@ -44,7 +50,19 @@ export class CommonService {
     const udiseId = "1234567890";
     const body = payload;
     return this.http.post(
-      "http://8788-103-208-68-197.ngrok-free.app/udise/schools/1234567890/form2",
+      "http://5aff-2402-e280-4117-34-c9ea-b3d-6560-660a.ngrok-free.app/udise/schools/1234567890/form2",
+      body,
+      { headers }
+    );
+  }
+  saveSchoolProfile1(payload: any): Observable<any> {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+    });
+    const udiseId = "1234567890";
+    const body = payload;
+    return this.http.post(
+      "http://5aff-2402-e280-4117-34-c9ea-b3d-6560-660a.ngrok-free.app/udise/schools/1234567890/form1",
       body,
       { headers }
     );
@@ -52,7 +70,12 @@ export class CommonService {
 
   getProfileDataOne() {
     return this.http.get(
-      "http://8788-103-208-68-197.ngrok-free.app/udise/schools/1234567890/form2"
+      "http://5aff-2402-e280-4117-34-c9ea-b3d-6560-660a.ngrok-free.app/udise/schools/1234567890/form2"
+    );
+  }
+  getProfileDataForm1() {
+    return this.http.get(
+      "http://5aff-2402-e280-4117-34-c9ea-b3d-6560-660a.ngrok-free.app/udise/schools/1234567890/form1"
     );
   }
 }

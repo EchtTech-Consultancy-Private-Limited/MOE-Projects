@@ -10,10 +10,13 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from "@angular/forms";
 
 import { CommonService } from "../../../common/common.service";
 import { AlertServiceService } from "../../../common/aleart.service";
+import { CommonModule } from "@angular/common";
+import { MatInputModule } from "@angular/material/input";
 
 @Component({
   selector: "app-my-profile2",
@@ -23,6 +26,9 @@ import { AlertServiceService } from "../../../common/aleart.service";
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    CommonModule,
     MatSelectModule,
     ProfileHeaderComponent,
     RouterLink,
@@ -43,14 +49,12 @@ export class MyProfile2Component implements OnInit {
     this.submitForm = this.getFormControls();
     this.myProfileDataOne();
   }
-  ngOnInit() {
-    // this.myProfileDataOne();
-  }
+  ngOnInit() {}
 
   myProfileDataOne() {
     this._commonService.getProfileDataOne().subscribe(
       (data) => {
-        console.log("data", data);
+        console.log("data naved", data);
         this.formtwoData = data;
         this.submitForm
           .get("isShiftSchool")
@@ -98,54 +102,60 @@ export class MyProfile2Component implements OnInit {
 
   getFormControls() {
     return this._fb.group({
-      isShiftSchool: [""],
-      isResidentialSchool: [""],
-      isMinorityManaged: [""],
-      isMotherTongueTaughtPrimary: [""],
-      offersPreVocationalTraining: [""],
-      hasAfterHoursTraining: [""],
-      distanceFromPrimary: [""],
-      distanceFromUprPrimary: [""],
-      distanceFromSecondary: [""],
-      distanceFromHS: [""],
-      hasAllWeatherRoads: [""],
-      instructionalDaysNo: [""],
-      isCCE: [""],
+      isShiftSchool: ["", Validators.required],
+      isResidentialSchool: ["", Validators.required],
+      isMinorityManaged: ["", Validators.required],
+      isMotherTongueTaughtPrimary: ["", Validators.required],
+      offersPreVocationalTraining: ["", Validators.required],
+      hasAfterHoursTraining: ["", Validators.required],
+      distanceFromPrimary: ["", Validators.required],
+      distanceFromUprPrimary: ["", Validators.required],
+      distanceFromSecondary: ["", Validators.required],
+      distanceFromHS: ["", Validators.required],
+      hasAllWeatherRoads: ["", Validators.required],
+      instructionalDaysNo: ["", Validators.required],
+      isCCE: ["", Validators.required],
     });
   }
 
   submitData() {
-    console.log(this.submitForm.value);
-    const payload = {
-      udiseCode: "1234567890",
-      isShiftSchool: this.submitForm.value.isShiftSchool,
-      isResidentialSchool: this.submitForm.value.isResidentialSchool,
-      isMinorityManaged: this.submitForm.value.isMinorityManaged,
-      isMotherTongueTaughtPrimary:
-        this.submitForm.value.isMotherTongueTaughtPrimary,
-      offersPreVocationalTraining:
-        this.submitForm.value.offersPreVocationalTraining,
-      hasAfterHoursTraining: this.submitForm.value.hasAfterHoursTraining,
-      distanceFromPrimary: this.submitForm.value.distanceFromPrimary,
-      distanceFromUprPrimary: this.submitForm.value.distanceFromUprPrimary,
-      distanceFromSecondary: this.submitForm.value.distanceFromSecondary,
-      // distanceFromHS: this.submitForm.value.distanceFromHS,
-      distanceFromHS: 0.2,
-      hasAllWeatherRoads: this.submitForm.value.hasAllWeatherRoads,
-      instructionalDaysNo: +this.submitForm.value.instructionalDaysNo,
-      isCCE: this.submitForm.value.isCCE,
-    };
-    console.log("PAYLOAD==>", payload);
-    this._commonService.saveSchoolProfile2(payload).subscribe({
-      next: (res) => {
-        console.log("shubham==>", res);
-        this._aleartService.swalPopSuccess("Data Saved Successfully");
-        this._router.navigateByUrl("/my-profile");
-      },
-      error: (err) => {
-        this._aleartService.swalPopError("Failed");
-        console.log(err);
-      },
-    });
+    if (this.submitForm.invalid) {
+      this._aleartService.swalPopError("Please Fill Required Fields");
+      this.submitForm.markAllAsTouched();
+      return;
+    } else {
+      console.log(this.submitForm.value);
+      const payload = {
+        udiseCode: "1234567890",
+        isShiftSchool: this.submitForm.value.isShiftSchool,
+        isResidentialSchool: this.submitForm.value.isResidentialSchool,
+        isMinorityManaged: this.submitForm.value.isMinorityManaged,
+        isMotherTongueTaughtPrimary:
+          this.submitForm.value.isMotherTongueTaughtPrimary,
+        offersPreVocationalTraining:
+          this.submitForm.value.offersPreVocationalTraining,
+        hasAfterHoursTraining: this.submitForm.value.hasAfterHoursTraining,
+        distanceFromPrimary: this.submitForm.value.distanceFromPrimary,
+        distanceFromUprPrimary: this.submitForm.value.distanceFromUprPrimary,
+        distanceFromSecondary: this.submitForm.value.distanceFromSecondary,
+        // distanceFromHS: this.submitForm.value.distanceFromHS,
+        distanceFromHS: 0.2,
+        hasAllWeatherRoads: this.submitForm.value.hasAllWeatherRoads,
+        instructionalDaysNo: +this.submitForm.value.instructionalDaysNo,
+        isCCE: this.submitForm.value.isCCE,
+      };
+      console.log("PAYLOAD==>", payload);
+      this._commonService.saveSchoolProfile2(payload).subscribe({
+        next: (res) => {
+          console.log("shubham==>", res);
+          this._aleartService.swalPopSuccess("Data Saved Successfully");
+          this._router.navigateByUrl("/my-profile");
+        },
+        error: (err) => {
+          this._aleartService.swalPopError("Failed");
+          console.log(err);
+        },
+      });
+    }
   }
 }

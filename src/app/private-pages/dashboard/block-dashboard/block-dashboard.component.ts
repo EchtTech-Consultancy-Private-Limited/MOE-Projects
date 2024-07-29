@@ -8,12 +8,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-block-dashboard',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, MatCardModule,  MatTableModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDialogModule, FontAwesomeModule],
+  imports: [RouterOutlet, RouterLink, MatCardModule,  MatTableModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDialogModule],
   templateUrl: './block-dashboard.component.html',
   styleUrls: ['./block-dashboard.component.scss'] // fix: styleUrl -> styleUrls
 })
@@ -33,5 +32,5 @@ export class BlockDashboardComponent {
   }
 
 
-  faCoffee = faCoffee;
+  // faCoffee = faCoffee;
 }

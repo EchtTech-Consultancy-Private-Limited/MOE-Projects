@@ -1,0 +1,263 @@
+body{
+    font-family: "Open Sans", sans-serif !important;
+}
+
+p, li, .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-body-2, .mat-typography{
+    font-family: "Open Sans", sans-serif !important;
+}
+a{
+    text-decoration: none !important;
+}
+
+.breadcrumb ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 13px;
+    li{
+        &:not(:last-child){
+            &::after{
+                content: "\f105";
+                font-family: "fontAwesome";
+                padding-left: 10px;
+                color: grey;
+                font-size: 11px;
+            
+            }
+        }
+    }
+}
+.my-profile-data-summay {
+    margin-bottom: 1em;
+    background-color: #edfaff;
+    border: 1px solid #9bcee229;
+    font-size: 1em;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 7px 4px;
+    p, li, .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-body-2, .mat-typography{
+        font-family: "Open Sans", sans-serif !important;
+    }
+    
+   
+    .btn-dashboard {
+        background: #4743c9;
+        border: 1px solid #4743c9;
+        color: #fff;
+        font-weight: 500;
+        padding: 8px 13px;
+        border-radius: 4px;
+        letter-spacing: 0.9px;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            background: #fff;
+            color: #4743c9;
+        }
+    }
+    p{
+        letter-spacing: 0.8px;
+    }
+}
+
+.profileData-content{
+    padding-bottom: 100px;
+    .card{
+        padding: 17px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        border: 0;
+    }
+    
+   
+    table{
+        .table-sr-no{
+            color: #4743c9;
+            font-weight: 600;
+            padding-right: 10px;
+        }
+        .table-title{
+
+        }
+        tr{
+           &:not(:last-child){
+                border-bottom: 1px solid #ddd;
+            }
+            td.child {
+                padding-left: 24px !important;
+            }
+            td{
+                padding: 15px 2px;
+                line-height: 1.5;
+                .mat-mdc-select-placeholder{
+                    line-height: 1 !important; 
+                }
+                .mat-mdc-option{
+                    min-height: 35px !important;
+                }
+                .form-label{
+                    display: flex;
+                }
+                input, .mat-mdc-select, select{
+                    border: 1px solid transparent;
+                    border-bottom: 1px solid #ddd;
+                    width: 100%;
+                    padding: 6px 7px;
+                    background: #dddddd42;
+                    border-radius: 4px;
+                    // text-transform: uppercase;
+                    font-size: 13px;
+                    transition: 0.2s;
+                    line-height: 2;
+                    &:focus{
+                        outline: none;
+                        border: 1px solid #60d3ff;
+                        /* box-shadow: 0px 0px 5px #2196f3; */
+                        background: #fff;
+                    }
+                }
+                span.label-heading {
+                    color: #4743c9;
+                }
+                .radio-location-type{
+                    input{
+                        width: auto;
+                        margin-right: 10px;
+                        cursor: pointer;
+                    }
+                    label{
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.w-33{width: 32% !important;}
+
+.mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-body-2, .mat-typography {
+    font: 400 14px / 20px "Open Sans", sans-serif !important;
+    letter-spacing: .0178571429em;
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.shcoolDashboard{
+    tbody tr:nth-of-type(odd) {
+        background: #f8f8f8 !important;
+    }
+    table tbody tr:nth-child(2n) {
+        background-color: #fff !important;
+    }
+    table tr td {
+        border-top: 0 !important;
+        border-left: 1px solid #ddd !important;
+        border-right: none !important;
+    }
+    table tbody td {
+        padding: 5px 15px;
+        color: #000;
+        font-size: 14px;
+    }
+    table{
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+        p{
+            margin: 0;
+        }
+        thead{
+            th{
+                background-color: #2b63df;
+                color: #fff;
+                font-size: 14px;
+                padding: 13px 10px;
+                border-right: 1px solid #fff;
+            }
+        }
+       
+        tbody{
+            
+            tr{
+                td{
+
+                }
+            }
+        }
+    }
+}
+
+::ng-deep{
+    table{
+        width: 100%;
+        thead{
+            th{
+                background-color: #2b63df;
+            }
+        }
+        tr{
+            td, th{
+                padding: 10px 15px !important;
+            }
+            th{
+                color: #fff;
+            }
+        }
+    }
+    .shcoolDashboard {
+        .mat-mdc-select{
+            padding: 3px 10px 4px;
+        }
+        .mat-mdc-select-value {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 8px;
+            font-size: 14px;
+            font-size: 13px;
+            line-height: 1.2 !important;
+        } 
+    }   
+}
+
+.btn-dashboard {
+    background: #4743c9;
+    border: 1px solid #4743c9;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 13px;
+    border-radius: 4px;
+    letter-spacing: 0.9px;
+    transition: 0.3s ease-in-out;
+    &:hover{
+        background: #fff;
+        color: #4743c9;
+    }
+}
+ul{
+    list-style: none;
+}
+
+span.value {
+    font-weight: normal;
+}
+a.back-btn {
+    background: #c4dee7;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #224d8a;
+    position: relative;
+    top: 5px;
+    left: 10px;
+    font-weight: 600;
+}
+p{
+    margin: 0;
+    font-size: 15px;
+    a{
+        text-decoration: none;
+        color: #0a3e58;
+        &:hover{
+            color: #0e7093;
+        }
+    }
+}

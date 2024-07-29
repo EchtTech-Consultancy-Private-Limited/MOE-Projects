@@ -5,12 +5,11 @@ import { FooterComponent } from './common/footer/footer.component';
 import { MyProfile2Component } from './private-pages/dashboard/my-profile2/my-profile2.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ProfileHeaderComponent } from './common/profile-header/profile-header.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, MyProfile2Component, ProfileHeaderComponent, FontAwesomeModule],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, MyProfile2Component, ProfileHeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

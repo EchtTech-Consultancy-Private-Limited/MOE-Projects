@@ -110,6 +110,12 @@
                         </div>
                       </mat-radio-group>
                     </div>
+                    <div *ngIf="submitForm.get('isShiftSchool')?.invalid && submitForm.get('isShiftSchool')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('isShiftSchool')?.hasError('required')">This field
+                        is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
 
@@ -118,12 +124,19 @@
                     <span class="table-sr-no">1.27</span> Is this a Residential School?
                   </td>
                   <td>
+
                     <mat-select formControlName="isResidentialSchool">
                       <mat-option [value]=""> Select</mat-option>
                       <mat-option [value]="true">Yes</mat-option>
                       <mat-option [value]="false">NO</mat-option>
                       <!-- <mat-option [value]="4"> 3 - Non-Residential</mat-option> -->
                     </mat-select>
+                    <div
+                      *ngIf="submitForm.get('isResidentialSchool')?.invalid && submitForm.get('isResidentialSchool')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('isResidentialSchool')?.hasError('required')">This field is
+                        required</span>
+                    </div>
 
                   </td>
                 </tr>
@@ -162,6 +175,12 @@
                           <mat-radio-button [value]="false">No</mat-radio-button>
                         </div>
                       </mat-radio-group>
+                    </div>
+                    <div
+                      *ngIf="submitForm.get('isMinorityManaged')?.invalid && submitForm.get('isMinorityManaged')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('isMinorityManaged')?.hasError('required')">This field is
+                        required</span>
                     </div>
 
                   </td>
@@ -204,6 +223,12 @@
                         </div>
                       </mat-radio-group>
                     </div>
+                    <div
+                      *ngIf="submitForm.get('isMotherTongueTaughtPrimary')?.invalid && submitForm.get('isMotherTongueTaughtPrimary')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('isMotherTongueTaughtPrimary')?.hasError('required')">This field is
+                        required</span>
+                    </div>
 
 
                   </td>
@@ -226,8 +251,14 @@
                           <mat-radio-button [value]="false">No</mat-radio-button>
                         </div>
                       </mat-radio-group>
-                    </div>
 
+                    </div>
+                    <div
+                      *ngIf="submitForm.get('offersPreVocationalTraining')?.invalid && submitForm.get('offersPreVocationalTraining')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('offersPreVocationalTraining')?.hasError('required')">This field is
+                        required</span>
+                    </div>
 
                   </td>
                 </tr>
@@ -249,9 +280,15 @@
                           <mat-radio-button [value]="false">No</mat-radio-button>
                         </div>
                       </mat-radio-group>
+
                     </div>
 
-
+                    <div
+                      *ngIf="submitForm.get('hasAfterHoursTraining')?.invalid && submitForm.get('hasAfterHoursTraining')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('hasAfterHoursTraining')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
 
@@ -272,7 +309,14 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="number" formControlName="distanceFromPrimary" placeholder="" value="" />
+                    <mat-label>Distance from Primary</mat-label>
+                    <input matInput type="number" formControlName="distanceFromPrimary" placeholder="Enter distance" />
+                    <div
+                      *ngIf="submitForm.get('distanceFromPrimary')?.invalid && submitForm.get('distanceFromPrimary')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('distanceFromPrimary')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
 
@@ -283,7 +327,16 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="number" formControlName="distanceFromUprPrimary" placeholder="" value="" />
+
+                    <mat-label>Distance from Primary</mat-label>
+                    <input matInput type="number" formControlName="distanceFromUprPrimary"
+                      placeholder="Enter distance" />
+                    <div
+                      *ngIf="submitForm.get('distanceFromUprPrimary')?.invalid && submitForm.get('distanceFromUprPrimary')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('distanceFromUprPrimary')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
 
@@ -306,7 +359,16 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="number" formControlName="distanceFromSecondary" placeholder="" value="" />
+
+                    <mat-label>Distance from Primary</mat-label>
+                    <input matInput type="number" formControlName="distanceFromSecondary"
+                      placeholder="Enter distance" />
+                    <div
+                      *ngIf="submitForm.get('distanceFromSecondary')?.invalid && submitForm.get('distanceFromSecondary')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('distanceFromSecondary')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -316,7 +378,14 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="number" formControlName="distanceFromHS" placeholder="" value="" />
+
+                    <mat-label>Distance from Primary</mat-label>
+                    <input matInput type="number" formControlName="distanceFromHS" placeholder="Enter distance" />
+                    <div *ngIf="submitForm.get('distanceFromHS')?.invalid && submitForm.get('distanceFromHS')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('distanceFromHS')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -344,9 +413,15 @@
                           <mat-radio-button [value]="false">No</mat-radio-button>
                         </div>
                       </mat-radio-group>
+
                     </div>
 
-
+                    <div
+                      *ngIf="submitForm.get('hasAllWeatherRoads')?.invalid && submitForm.get('hasAllWeatherRoads')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('hasAllWeatherRoads')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -358,7 +433,15 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="instructionalDaysNo" placeholder="" value="" />
+
+                    <mat-label>Distance from Primary</mat-label>
+                    <input matInput type="number" formControlName="instructionalDaysNo" placeholder="Enter distance" />
+                    <div
+                      *ngIf="submitForm.get('instructionalDaysNo')?.invalid && submitForm.get('instructionalDaysNo')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('instructionalDaysNo')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <!-- <tr>
@@ -431,9 +514,14 @@
                           <mat-radio-button [value]="false">No</mat-radio-button>
                         </div>
                       </mat-radio-group>
+
                     </div>
 
-
+                    <div *ngIf="submitForm.get('isCCE')?.invalid && submitForm.get('isCCE')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('isCCE')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
 
