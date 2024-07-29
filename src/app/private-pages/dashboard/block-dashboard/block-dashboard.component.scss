@@ -252,4 +252,10 @@ ul{
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.operation-link::before {
+    content: '\f054';
+    font-family: 'FontAwesome';
 }

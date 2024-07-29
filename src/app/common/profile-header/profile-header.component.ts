@@ -5,11 +5,12 @@ import { MatIconModule } from "@angular/material/icon"; // Import MatIconModule
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { Router } from "@angular/router";
 import { AlertServiceService } from "../aleart.service";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: "app-profile-header",
   standalone: true,
-  imports: [MatSidenavModule, MatListModule, MatIconModule, MatToolbarModule],
+  imports: [MatSidenavModule, MatListModule, MatIconModule, MatToolbarModule, FontAwesomeModule],
   templateUrl: "./profile-header.component.html",
   styleUrls: ["./profile-header.component.scss"],
 })
