@@ -356,9 +356,9 @@
                     <span class="table-sr-no">1.10</span> School Contact Details <sup>##</sup>
                   </td>
                   <td>
-
-                    <input matInput type="text" formControlName="geographical_location"
-                      placeholder="Enter Geographical Location Name" value="" />
+                    
+                    <!-- <input formControlName="geographical_location"
+                      placeholder="Enter Geographical Location Name" value="" /> -->
                     <div
                       *ngIf="submitForm.get('geographical_location')?.invalid && submitForm.get('geographical_location')?.touched">
                       <span style="color: red; padding-left: 12px;"
@@ -820,9 +820,9 @@
                     </div>
                   </td>
                   <td>
-                    <!-- <input matInput type="date" formControlName="yoe" placeholder="Enter Establishment Date" value="" />
-                      -->
-                    <mat-form-field appearance="outline" class="w-100">
+                    <input matInput type="text" formControlName="yoe" placeholder="Enter Establishment year" value="" />
+                     
+                    <!-- <mat-form-field appearance="outline" class="w-100">
                       <input matInput formControlName="yoe" [matDatepicker]="picker3" placeholder="Choose a date"
                         readonly="true" (click)="picker3.open()" />
                       <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
@@ -830,7 +830,7 @@
                       <mat-error>
                         This field is required
                       </mat-error>
-                    </mat-form-field>
+                    </mat-form-field> -->
                   </td>
                 </tr>
 
