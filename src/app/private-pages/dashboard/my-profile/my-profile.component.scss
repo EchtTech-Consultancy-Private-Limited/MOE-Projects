@@ -247,6 +247,7 @@ table tr td div.mat-mdc-select-panel .mat-mdc-option {
     border-radius: 24px;
     padding: 7px 26px;
     transition: 0.3s;
+    cursor: pointer;
     &:hover{
         border: 1px solid #3F51B5;
         background: #fff;

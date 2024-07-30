@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./dashboard-schoolwise.component.scss']
 })
 export class DashboardSchoolwiseComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ["position","school_Name", "UDISE_Code", "school_Category", "school_Management", "status", "last_Modified", "data_entry"];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -23,6 +23,7 @@ export class DashboardSchoolwiseComponent {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
@@ -30,39 +31,65 @@ export class DashboardSchoolwiseComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  changePageSize(pageSize: number) {
+  changePageSize(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    const pageSize = parseInt(selectElement.value, 10);
     this.paginator.pageSize = pageSize;
-    this.paginator._changePageSize(pageSize); // Required to force the paginator to update
+    this.dataSource.paginator = this.paginator; // Update the paginator
   }
 }
 
 
 export interface PeriodicElement {
-  name: string;
+  // School Name	UDISE Code	School Category	School Management	Status	Last Modified	Data Entry (Active/In-Active)
   position: number;
-  weight: number;
-  symbol: string;
+  school_Name: string;
+  UDISE_Code: number;
+  school_Category: string;
+  school_Management: string;
+  status: string;
+  last_Modified: string;
+  data_entry:string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-  {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-  {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-  {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-  {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-  {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-  {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-  {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-  {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-  {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
+  {
+    position: 1,  school_Name: 'Akshay Gupta School',    UDISE_Code: 16030600306, 
+    school_Category: '3 - Pr. with Up.Pr. sec. and H.Sec.', 
+    school_Management: 'Completed', 
+    status: 'Last Updated By : 16030600306(SCHOOL USER)| Last Updated On : 26/07/2024', 
+    last_Modified: '26/07/2024', 
+    data_entry: 'Data Entry Active'
+  },
+  {
+    position: 2, 
+    school_Name: 'ASHRAM PARA JB SCHOOL', 
+    UDISE_Code: 16030600505, 
+    school_Category: '1 - Primary', 
+    school_Management: 'Needs Updation', 
+    status: 'Last Updated By : (BLOCK ENTRY USER)| Last Updated On : 25/07/2024', 
+    last_Modified: '25/07/2024', 
+    data_entry: 'Data Entry Active'
+  },
+  {
+    position: 3, 
+    school_Name: 'BAGHAICHARI S.B. SCHOOL', 
+    UDISE_Code: 16030602002, 
+    school_Category: '2 - Primary with Upper Primary', 
+    school_Management: 'Needs Updation', 
+    status: 'Last Updated By : TR71379287 (BLOCK ENTRY USER), DURGACHOWMUHANI| Last Updated On : 30/12/2023', 
+    last_Modified: '30/12/2023', 
+    data_entry: 'Data Entry Active'
+  },
+  {
+    position: 4, 
+    school_Name: 'Bal Bhavan International School, Dwarka Sub City', 
+    UDISE_Code: 16030600709, 
+    school_Category: '3 - Pr. with Up.Pr. sec. and H.Sec.', 
+    school_Management: 'Needs Updation', 
+    status: 'Last Updated By : TR71374607 (BLOCK ENTRY USER), DURGACHOWMUHANI| Last Updated On : 23/07/2024', 
+    last_Modified: '23/07/2024', 
+    data_entry: 'Data Entry Active'
+  }
 ];
+

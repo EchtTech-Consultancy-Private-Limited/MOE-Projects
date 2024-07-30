@@ -13,25 +13,34 @@
   
   <div class="profileData-content px-2">
     <div class="container-fluid">
-        <div class="mat-elevation-z8">
+        <div class="card">
             
-                <mat-card-header>
+          <div class="breadcrumb">
+            <ul>
+                <li><a>State Name</a></li>
+                <li><a>District Name</a></li>
+                <li><a>Block Name</a></li>
+                <li>DURGACHOWMUHANI</li>
+
+            </ul>
+         </div>
+                <!-- <mat-card-header>
                   <mat-card-title>School Data</mat-card-title>
-                </mat-card-header>
+                </mat-card-header> -->
                
                 <mat-card-content>
 
                     <div class="controls-container">
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col">
-                                <div class="page-size-container">
+                                <div class="page-size-container d-flex align-items-center gap-3">
                                     <label>Items per page</label>
-                                    <!-- <select (change)="changePageSize($event.target.value)" class="form-control w-auto">
-                                        <option [value]="undefined" disabled selected>Select items per page</option>
-                                        <option *ngFor="let size of [5, 10, 20, 50]" [value]="size">
-                                          {{size}}
-                                        </option>
-                                      </select> -->
+                                    <select (change)="changePageSize($event)" class="form-control w-auto">
+                                      <!-- <option [value]="undefined" disabled selected>Select items per page</option> -->
+                                      <option *ngFor="let size of [5, 10, 20, 50]" [value]="size">
+                                        {{size}}
+                                      </option>
+                                    </select>
 
                                   </div>
                             </div>
@@ -43,33 +52,52 @@
                                   </div>
                             </div>
                         </div>
-                       
+                       				
                       </div>
-                      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-                        <ng-container matColumnDef="position">
-                          <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+                      <table mat-table [dataSource]="dataSource" matSort class="">
+                        <ng-container matColumnDef="position" class="">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header>  Sr No. </th>
                           <td mat-cell *matCellDef="let element"> {{element.position}} </td>
                         </ng-container>
-                  
-                        <ng-container matColumnDef="name">
-                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        <ng-container matColumnDef="school_Name">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header>  School Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.school_Name}} </td>
                         </ng-container>
                   
-                        <ng-container matColumnDef="weight">
-                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
-                          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                        <ng-container matColumnDef="UDISE_Code">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> UDISE Code </th>
+                          <td mat-cell *matCellDef="let element"> {{element.UDISE_Code}} </td>
                         </ng-container>
                   
-                        <ng-container matColumnDef="symbol">
-                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
-                          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                        <ng-container matColumnDef="school_Category">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> School Category </th>
+                          <td mat-cell *matCellDef="let element"> {{element.school_Category}} </td>
+                        </ng-container>
+                  
+                        <ng-container matColumnDef="school_Management">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> School Management </th>
+                          <td mat-cell *matCellDef="let element"> {{element.school_Management}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="status">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="last_Modified">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Modified </th>
+                          <td mat-cell *matCellDef="let element"> {{element.last_Modified}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="data_entry">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Data Entry (Active/In-Active)</th>
+                          <td mat-cell *matCellDef="let element"> {{element.data_entry}} </td>
                         </ng-container>
                   
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                       </table>
-                      <mat-paginator  showFirstLastButtons></mat-paginator>
+                      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
                      
                 </mat-card-content>
             
@@ -77,56 +105,7 @@
           </div>
           
   
-      <div class="shcoolDashboard">
-           <mat-card class="card">
-              <div class="">
-                 <div class="breadcrumb">
-                    <ul>
-                        <li><a>State Name</a></li>
-                        <li><a>District Name</a></li>
-                        <li><a>Block Name</a></li>
-                        <li>DURGACHOWMUHANI</li>
-
-                    </ul>
-                 </div>
-                                  
-                  <table>
-                      <thead>
-                          <th>Form Sl. No. </th>
-                          <th>DCF Serial No.</th>
-                          <th>Form Name </th>
-                          <th>Last Modified By Last Updated On</th>
-                          <th>Status</th>
-                      </thead>
-  
-                      <tbody>
-                          <tr>
-                              <td colspan="5">
-                                  <p>Section 1- School Profile (Location, Structure, Management and Medium of Instruction)</p>
-                              </td>
-                          </tr>
-  
-                          <tr>
-                              <td>1 </td>
-                              <td>1.1 to 1.26</td>
-                              <td>Section 1A-  Basic School Profile (Location, Management, Medium of Instruction etc)</td>
-                              <td>16030600306 (SCHOOL USER) 25/07/2024</td>
-                              <td>Completed</td>
-                          </tr>
-  
-                          <tr>
-                              <td>2</td>
-                              <td>1.27 to 1.36</td>
-                              <td>School Others Details</td>
-                              <td>(SCHOOL USER) &#64; 25/07/2024</td>
-                              <td>Completed</td>
-                          </tr>
-                      </tbody>
-                  </table>
-                </div>
-                
-          </mat-card>
-      </div>
+     
    
    
     </div>

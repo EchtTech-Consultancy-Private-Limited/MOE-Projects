@@ -8,21 +8,34 @@ p, li, .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-b
 a{
     text-decoration: none !important;
 }
+    .mat-mdc-card-title {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding: 0px 0px;
+    display: block;
+    line-height: 1.5;
+}
 
-.breadcrumb ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 13px;
-    li{
-        &:not(:last-child){
-            &::after{
-                content: "\f105";
-                font-family: "fontAwesome";
-                padding-left: 10px;
-                color: grey;
-                font-size: 11px;
-            
+.breadcrumb{
+    padding: 0px;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 13px;
+        li{
+            &:not(:last-child){
+                &::after{
+                    content: "\f105";
+                    font-family: "fontAwesome";
+                    padding-left: 10px;
+                    color: grey;
+                    font-size: 11px;
+                
+                }
             }
         }
     }
@@ -69,7 +82,7 @@ a{
    
     table{
         .table-sr-no{
-            color: #4743c9;
+            color: #4743c9 !important;
             font-weight: 600;
             padding-right: 10px;
         }
@@ -78,7 +91,7 @@ a{
         }
         tr{
            &:not(:last-child){
-                border-bottom: 1px solid #ddd;
+                border-bottom: 1px solid #ddd !important;
             }
             td.child {
                 padding-left: 24px !important;
@@ -159,18 +172,18 @@ a{
     }
     table{
         width: 100%;
-        border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd !important;
+        border-right: 1px solid #ddd !important;
         p{
             margin: 0;
         }
         thead{
-            th{
-                background-color: #2b63df;
-                color: #fff;
-                font-size: 14px;
-                padding: 13px 10px;
-                border-right: 1px solid #fff;
+            th, th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell{
+                background-color: #2b63df !important;
+                color: #fff !important;
+                font-size: 14px !important;
+                padding: 13px 10px !important;
+                border-right: 1px solid #fff !important;
             }
         }
        
@@ -186,11 +199,26 @@ a{
 }
 
 ::ng-deep{
+    .mat-sort-header-content {
+        white-space: nowrap;
+    }
+    .mat-sort-header-arrow{
+        color: #fff !important;
+    }
+    .mat-mdc-paginator-page-size{
+        display: none !important;
+    }
     table{
+        border-bottom: 1px solid #ddd !important;
+        border-right: 1px solid #ddd !important;
         width: 100%;
-        thead{
+        thead, th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell{
             th{
-                background-color: #2b63df;
+                background-color: #174485 !important;
+                color: #fff !important;
+                font-size: 14px !important;
+                padding: 13px 10px !important;
+                border-right: 1px solid #fff !important;
             }
         }
         tr{
@@ -199,6 +227,17 @@ a{
             }
             th{
                 color: #fff;
+            }
+            td{
+                border-top: 0 !important;
+                border-left: 1px solid #ddd !important;
+                border-right: none !important;
+            }
+            &:nth-child(even) {
+                background-color: #fff !important;
+            }
+            &:nth-of-type(odd) {
+                background: #f8f8f8 !important;
             }
         }
     }
@@ -261,3 +300,13 @@ p{
         }
     }
 }
+
+
+.page-size-container{
+    select{
+        appearance: auto;
+        padding: 8px 2px 8px 4px;
+        cursor: pointer;
+    }
+}
+
