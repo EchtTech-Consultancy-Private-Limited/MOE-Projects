@@ -8,7 +8,27 @@ p, li, .mat-body, .mat-body-2, .mat-typography .mat-body, .mat-typography .mat-b
 a{
     text-decoration: none !important;
 }
+::ng-deep {
+    .cdk-overlay-pane div.mat-mdc-select-panel{
+        left: -8px;
+        position: absolute;
+        top: 6px;
+      }
+      .mat-mdc-option  {
+        min-height: 35px !important;
+        .mdc-list-item__primary-text{
+            font-size: 14px !important;
+           
+            &.mat-selected {
+              background-color: #d1c4e9; /* Background color for selected option */
+              color: #000; /* Text color for selected option */
+            }
+        }
+       
+      }
+}
 
+  
 .my-profile-data-summay {
     margin-bottom: 1em;
     background-color: #edfaff;

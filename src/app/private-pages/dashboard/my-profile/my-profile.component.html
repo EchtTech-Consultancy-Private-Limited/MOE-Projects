@@ -6,9 +6,7 @@
           <li>
             <p>
               School :
-              <span class="value"
-                ><a href="#">Abhoynagar English Medium School Pry</a></span
-              >
+              <span class="value"><a href="#">Abhoynagar English Medium School Pry</a></span>
             </p>
           </li>
           <li>
@@ -19,7 +17,7 @@
               <p>UDISE+ Code : <span class="value">16020801111</span></p>
               <p><span class="value"> </span></p>
             </div>
-           
+
           </li>
           <li></li>
         </ul>
@@ -37,7 +35,7 @@
               <a href="#"> 1.26 to 1.36</a>
             </li>
 
-           
+
             <li class="class6">
               <a href="#">1.55.1 to 1.55.20</a>
             </li>
@@ -66,7 +64,7 @@
       </div>
     </div>
     <div class="row">
-      
+
       <div class="col-md-12  mt-2">
         <div class="d-flex justify-content-between">
           <div class="  ">
@@ -74,7 +72,7 @@
           </div>
           <button type="button" class="btn-dashboard">State Dashboard</button>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -88,24 +86,25 @@
     </p>
 
     <div class="card">
-      <form action="">
+      <form [formGroup]="submitForm">
         <div class="row">
           <div class="col-md-6 border-end">
             <table class="w-100">
               <tbody>
                 <tr>
-                  <td> 
-  
+                  <td>
+
                     <span class="table-sr-no">1.1</span> School Name (In capital
                     letters) <sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="school_name"
-                      placeholder="Enter School Name"
-                      value="" 
-                    />
+                    <input matInput type="text" formControlName="schoolName" placeholder="Enter School Name" />
+                    <div *ngIf="submitForm.get('schoolName')?.invalid && submitForm.get('schoolName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('schoolName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
+
                   </td>
                 </tr>
                 <tr>
@@ -113,12 +112,13 @@
                     <span class="table-sr-no">1.2</span> Name of the District<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="district_name"
-                      placeholder="Enter District Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="districtName" placeholder="Enter District Name" />
+                    <div *ngIf="submitForm.get('districtName')?.invalid && submitForm.get('districtName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('districtName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -126,121 +126,141 @@
                     <span class="table-sr-no">1.3</span> Name of the UDISE+ Block<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="udise_block"
-                      placeholder="Enter UDISE+ Block Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="udiseBlockName" placeholder="Enter District Name" />
+                    <div *ngIf="submitForm.get('udiseBlockName')?.invalid && submitForm.get('udiseBlockName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('udiseBlockName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
-                      
-                      <span class="table-sr-no">1.4</span><span> School Location Type (1-Rural, 2-Urban)<sup>&#64;&#64;</sup></span>
+
+                      <span class="table-sr-no">1.4</span><span> School Location Type (1-Rural,
+                        2-Urban)<sup>&#64;&#64;</sup></span>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex align-items-center radio-location-type">
-                      <mat-radio-group name="school_location_type" class="d-flex w-100">
+                      <mat-radio-group formControlName="schoolLocationType" class="d-flex w-100">
                         <div class="d-flex align-items-center w-50">
-                          <mat-radio-button id="Rural" value="1-Rural">1-Rural</mat-radio-button>
+                          <mat-radio-button id="Rural" value="Rural">1-Rural</mat-radio-button>
                         </div>
                         <div class="d-flex align-items-center w-50">
-                          <mat-radio-button id="Urban" value="2-Urban">2-Urban</mat-radio-button>
+                          <mat-radio-button id="Urban" value="Urban">2-Urban</mat-radio-button>
                         </div>
                       </mat-radio-group>
                     </div>
-                    
-                   
-                    
+                    <div
+                      *ngIf="submitForm.get('schoolLocationType')?.invalid && submitForm.get('schoolLocationType')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('schoolLocationType')?.hasError('required')">This field is
+                        required</span>
+                    </div>
+
+
                   </td>
                 </tr>
                 <tr>
                   <td colspan="2">
                     <span class="table-sr-no"></span> <b class="ms-3">If 1-RURAL then</b>
                   </td>
-                
+
                 </tr>
                 <tr>
                   <td class="child">
-                    <span class="table-sr-no">(a)</span> <span class="label-heading"> Revenue Block /CD Block (As Per LGD) </span>
+                    <span class="table-sr-no">(a)</span> <span class="label-heading"> Revenue Block /CD Block (As Per
+                      LGD) </span>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="revenue_block_cd_block"
-                      placeholder="Enter Revenue Block /CD Block Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="revenueBlock"
+                      placeholder="Enter Revenue Block /CD Block Name" value="" />
+                    <div *ngIf="submitForm.get('revenueBlock')?.invalid && submitForm.get('revenueBlock')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('revenueBlock')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td class="child"> 
-                    <span class="table-sr-no">(b)</span> <span class="label-heading"> Village Name (As Per LGD)  </span>
+                  <td class="child">
+                    <span class="table-sr-no">(b)</span> <span class="label-heading"> Village Name (As Per LGD) </span>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="village_name_as_Per_lgd"
-                      placeholder="Enter Village  Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="villName" placeholder="Enter Village  Name" value="" />
+                    <div *ngIf="submitForm.get('villName')?.invalid && submitForm.get('villName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('villName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td class="child ">
                     <div class="d-flex">
 
-                      <span class="table-sr-no">(c)</span> <span class="label-heading"> Name of Gram Panchayat (As Per LGD)  </span>
+                      <span class="table-sr-no">(c)</span> <span class="label-heading"> Name of Gram Panchayat (As Per
+                        LGD) </span>
                     </div>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="name_of_gram_panchayat_as_per_lgd"
-                      placeholder="Enter Gram Panchayat Name"
-                      value=""
-                    />
+
+
+                    <input matInput type="text" formControlName="gramPanchName"
+                      placeholder="Enter Gram Panchayat Name" />
+                    <div *ngIf="submitForm.get('gramPanchName')?.invalid && submitForm.get('gramPanchName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('gramPanchName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td colspan="2">
                     <span class="table-sr-no"></span> <b class="ms-3">If 2-URBAN then</b>
                   </td>
-                  
+
                 </tr>
                 <tr>
                   <td class="child">
-                    <span class="table-sr-no">(d)</span> <span class="label-heading">Urban Local bodies (As per LGD)  </span>
+                    <span class="table-sr-no">(d)</span> <span class="label-heading">Urban Local bodies (As per LGD)
+                    </span>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="urban_local_bodies_as_per_bodies"
-                      placeholder="Enter Urban Local bodies Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="urbanLB" placeholder="Enter Urban Local bodies Name" />
+                    <div *ngIf="submitForm.get('urbanLB')?.invalid && submitForm.get('urbanLB')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('urbanLB')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td colspan="2">
                     <span class="table-sr-no"></span> <b class="ms-3">(Municipalities / Nagar Panchayat etc.)</b>
                   </td>
-                 
+
                 </tr>
                 <tr>
                   <td class="child">
-                    <span class="table-sr-no">(e)</span> <span class="label-heading"> Revenue Block /CD Block (As Per LGD) </span>
+                    <span class="table-sr-no">(e)</span> <span class="label-heading"> Revenue Block /CD Block (As Per
+                      LGD) </span>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="revenue_block_cd_Block_as_per_lgd"
-                      placeholder="Enter Revenue Block /CD Block Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="wardName"
+                      placeholder="Enter Revenue Block /CD Block Name" />
+                    <div *ngIf="submitForm.get('wardName')?.invalid && submitForm.get('wardName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('wardName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -248,12 +268,13 @@
                     <span class="table-sr-no">1.5</span> School Address<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="school_address"
-                      placeholder="Enter School Address"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="schoolAddress" placeholder="Enter School Address" />
+                    <div *ngIf="submitForm.get('schoolAddress')?.invalid && submitForm.get('schoolAddress')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('schoolAddress')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
@@ -261,167 +282,238 @@
                     <span class="table-sr-no">1.6</span> Pin Code<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="pin_code"
-                      placeholder="Enter Pin Code"
-                      value=""
-                    />
+
+                    <input matInput type="number" maxlength="6" formControlName="pinCode"
+                      placeholder="Enter Pin Code" />
+                    <div *ngIf="submitForm.get('pinCode')?.invalid && submitForm.get('pinCode')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('pinCode')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
-                      
-                      <span class="table-sr-no">1.7</span> <span>Name of the Cluster Resource Centre (CRC)<sup>&#64;&#64;</sup></span>
+
+                      <span class="table-sr-no">1.7</span> <span>Name of the Cluster Resource Centre
+                        (CRC)<sup>&#64;&#64;</sup></span>
                     </div>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="cluster_resource_center"
-                      placeholder="Enter Name CRC"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="crcName" placeholder="Enter Name CRC" value="" />
+                    <div *ngIf="submitForm.get('crcName')?.invalid && submitForm.get('crcName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('crcName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
-  
+
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.8 (a)</span> <span class="label-heading"> Name of the Assembly Constituency</span>
+                    <span class="table-sr-no">1.8 (a)</span> <span class="label-heading"> Name of the Assembly
+                      Constituency</span>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="assembly_constituency"
-                      placeholder="Enter Assembly Constituency Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="asmblyConstName"
+                      placeholder="Enter Assembly Constituency Name" value="" />
+                    <div
+                      *ngIf="submitForm.get('asmblyConstName')?.invalid && submitForm.get('asmblyConstName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('asmblyConstName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
-  
+
                 <tr>
                   <td class="child">
                     <div class="d-flex">
 
-                      <span class="table-sr-no">(b)</span> <span class="label-heading"> Name of the Parliamentary Constituency  </span>
+                      <span class="table-sr-no">(b)</span> <span class="label-heading"> Name of the Parliamentary
+                        Constituency </span>
                     </div>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="parliamentary_constituency"
-                      placeholder="Enter Parliamentary Constituency Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="parlmntConstName"
+                      placeholder="Enter Parliamentary Constituency Name" value="" />
+                    <div
+                      *ngIf="submitForm.get('parlmntConstName')?.invalid && submitForm.get('parlmntConstName')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('parlmntConstName')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
-  
-              
+
+
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.9</span> School Contact Details <sup>##</sup>
+                    <span class="table-sr-no">1.10</span> School Contact Details <sup>##</sup>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="geographical_location"
-                      placeholder="Enter Geographical Location Name"
-                      value=""
-                    />
+
+                    <input matInput type="text" formControlName="geographical_location"
+                      placeholder="Enter Geographical Location Name" value="" />
+                    <div
+                      *ngIf="submitForm.get('geographical_location')?.invalid && submitForm.get('geographical_location')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('geographical_location')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td class="child" colspan="2">
-                   <div class="d-flex justify-content-between align-items-center gap-3">
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(a)</span> STD Code</label>
-                      <input matInput  type="number" name="std_code" placeholder="Enter STD Code" value="" />
+                    <div class="d-flex justify-content-between align-items-center gap-3">
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(a)</span> STD Code</label>
+                        <input matInput type="number" maxlength="8" formControlName="stdCode"
+                          placeholder="Enter STD Code" value="" />
+                        <div *ngIf="submitForm.get('stdCode')?.invalid && submitForm.get('stdCode')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('stdCode')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Landline Number</label>
+                        <input matInput type="number" [maxlength]="10" formControlName="landlineNo"
+                          placeholder="Enter Landline Number" value="" />
+                        <div *ngIf="submitForm.get('landlineNo')?.invalid && submitForm.get('landlineNo')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('landlineNo')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Mobile Number</label>
+                        <input matInput type="number" [maxlength]="10" formControlName="mobileNo"
+                          placeholder="Enter Mobile Number" value="" />
+                        <div *ngIf="submitForm.get('mobileNo')?.invalid && submitForm.get('mobileNo')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('mobileNo')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(b)</span>  Landline Number</label>
-                      <input matInput  type="number" name="landline_number" placeholder="Enter Landline Number" value="" />
-                    </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(c)</span>  Mobile Number</label>
-                      <input matInput  type="number" name="mobile_number" placeholder="Enter Mobile Number" value="" />
-                    </div>
-                   </div>
-                   
+
                   </td>
-                
+
                 </tr>
                 <tr>
                   <td class="child" colspan="2">
-                   <div class="d-flex justify-content-start align-items-center gap-3">
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(d)</span> Email</label>
-                      <input matInput  type="email" name="email" placeholder="Enter Email Name" value="" />
+                    <div class="d-flex justify-content-start align-items-center gap-3">
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(d)</span> Email</label>
+                        <input matInput type="email" formControlName="email" placeholder="Enter Email Name" value="" />
+                        <div *ngIf="submitForm.get('email')?.invalid && submitForm.get('email')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('email')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(e)</span> Website of the
+                          School</label>
+                        <input matInput type="text" formControlName="website" placeholder="Enter Website of the School"
+                          value="" />
+                        <div *ngIf="submitForm.get('website')?.invalid && submitForm.get('website')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('website')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(e)</span> Website of the School</label>
-                      <input matInput  type="text" name="website_of_the_school" placeholder="Enter Website of the School" value="" />
-                    </div>
-                   
-                   </div>
-                   
+
                   </td>
-                
+
                 </tr>
-               
+
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
 
-                      <span class="table-sr-no">1.10</span> Head of the School (HoS) / In-Charge Details <sup>##</sup>
+                      <span class="table-sr-no">1.11</span> Head of the School (HoS) / In-Charge Details <sup>##</sup>
                     </div>
                   </td>
                   <td>
-                  
+
                   </td>
                 </tr>
                 <tr>
                   <td class="child" colspan="2">
-                   <div class="d-flex justify-content-between align-items-center gap-3">
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(a)</span> HoS / In-Charge Type</label>
-                      <mat-select >
-                        <mat-option [value]="1">1- Head Master/Principal</mat-option>
-                        <mat-option [value]="2">2- Asst. Head Master/Vice Principal</mat-option>
-                        <mat-option [value]="3">3-Acting Head Teacher</mat-option>
-                        <mat-option [value]="4">4-In-Charge from Other School</mat-option>
-                        <mat-option [value]="5">5-In-Charge from Block/District</mat-option>
-                        <mat-option [value]="6">6-Others</mat-option>
-                      </mat-select>
-                   
-                      <!-- <input matInput  type="text" name="urban_local_bodies_as_per_bodies" placeholder="Enter Urban Local bodies Name" value="" /> -->
+                    <div class="d-flex justify-content-between align-items-center gap-3">
+                      <!-- <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(a)</span> HoS / In-Charge
+                          Type</label>
+                        <mat-select formControlName="hosInchargeTypeD" panelClass="custom-select-panel">
+                          <mat-option [value]="1">1- Head Master/Principal</mat-option>
+                          <mat-option [value]="2">2- Asst. Head Master/Vice Principal</mat-option>
+                          <mat-option [value]="3">3-Acting Head Teacher</mat-option>
+                          <mat-option [value]="4">4-In-Charge from Other School</mat-option>
+                          <mat-option [value]="5">5-In-Charge from Block/District</mat-option>
+                          <mat-option [value]="6">6-Others</mat-option>
+                        </mat-select>
+                        <div
+                          *ngIf="submitForm.get('hosInchargeTypeD')?.invalid && submitForm.get('hosInchargeTypeD')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('hosInchargeTypeD')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+
+                        <input matInput  type="text" name="urban_local_bodies_as_per_bodies" placeholder="Enter Urban Local bodies Name" value="" />
+                      </div> -->
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(b)</span> HoS /In-Charge
+                          Name</label>
+                        <input matInput type="text" formControlName="hos" placeholder="Enter Urban Local bodies Name"
+                          value="" />
+                        <div *ngIf="submitForm.get('hos')?.invalid && submitForm.get('hos')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('hos')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Mobile Number</label>
+                        <input matInput type="number" maxlength="10" formControlName="hosMobNo"
+                          placeholder="Enter Urban Local bodies Name" value="" />
+                        <div *ngIf="submitForm.get('hosMobNo')?.invalid && submitForm.get('hosMobNo')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('hosMobNo')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(b)</span>  HoS /In-Charge Name</label>
-                      <input matInput  type="text" name="urban_local_bodies_as_per_bodies" placeholder="Enter Urban Local bodies Name" value="" />
-                    </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(c)</span>  Mobile Number</label>
-                      <input matInput  type="text" name="urban_local_bodies_as_per_bodies" placeholder="Enter Urban Local bodies Name" value="" />
-                    </div>
-                   </div>
-                   
+
                   </td>
-                
+
                 </tr>
                 <tr>
                   <td class="child" colspan="2">
-                   <div class="d-flex justify-content-start align-items-center gap-3 w-33">
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(d)</span> HoS Email</label>
-                      <input matInput  type="text" name="urban_local_bodies_as_per_bodies" placeholder="Enter Urban Local bodies Name" value="" />
+                    <div class="d-flex justify-content-start align-items-center gap-3 w-33">
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(d)</span> HoS Email</label>
+                        <input matInput type="text" formControlName="hosEmail"
+                          placeholder="Enter Urban Local bodies Name" value="" />
+                        <div *ngIf="submitForm.get('hosEmail')?.invalid && submitForm.get('hosEmail')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('hosEmail')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+
+
                     </div>
-                    
-                   
-                   </div>
-                   
+
                   </td>
-                
+
                 </tr>
 
 
@@ -436,31 +528,37 @@
             </div>
             <table class="w-100">
               <tbody>
-                
-               
+
+
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
 
-                      <span class="table-sr-no">1.11(a)</span>  Management Group of the School
+                      <span class="table-sr-no">1.12(a)</span> Management Group of the School
                     </div>
 
                   </td>
                   <td>
-                    <mat-select >
-                    <mat-option [value]="1"> A- State Government</mat-option>
-                    <mat-option [value]="2">B – Govt. Aided</mat-option>
-                    <mat-option [value]="3">C- Private Unaided</mat-option>
-                    <mat-option [value]="4">D- Central Government</mat-option>
-                    <mat-option [value]="5">E- Others</mat-option>
-                  </mat-select>
-                   
+                    <mat-select formControlName="managementGroupOfSchoolD">
+                      <mat-option [value]="1"> A- State Government</mat-option>
+                      <mat-option [value]="2">B – Govt. Aided</mat-option>
+                      <mat-option [value]="3">C- Private Unaided</mat-option>
+                      <mat-option [value]="4">D- Central Government</mat-option>
+                      <mat-option [value]="5">E- Others</mat-option>
+                    </mat-select>
+                    <div
+                      *ngIf="submitForm.get('managementGroupOfSchoolD')?.invalid && submitForm.get('managementGroupOfSchoolD')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('managementGroupOfSchoolD')?.hasError('required')">This field is
+                        required</span>
+                    </div>
+
                   </td>
                 </tr>
-  
-  
-  
-                
+
+
+
+
                 <tr>
                   <td class="child ">
                     <div class="d-flex">
@@ -468,27 +566,31 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput 
-                      type="number"
-                      name="management_code_of_school"
-                      placeholder="Management Code of School"
-                      value=""
-                    />
+                    <input matInput type="text" formControlName="schoolManagementGroup"
+                      placeholder="Management Code of School" value="" />
+                    <div
+                      *ngIf="submitForm.get('schoolManagementGroup')?.invalid && submitForm.get('schoolManagementGroup')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('schoolManagementGroup')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td class="child ">
                     <div class="d-flex">
-                      <span class="table-sr-no">(c)</span>  **For Management Code 101 mention Nodal Ministry/Dept 
+                      <span class="table-sr-no">(c)</span> **For Management Code 101 mention Nodal Ministry/Dept
                     </div>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="nodal_ministry_dept"
-                      placeholder="Mention Nodal Ministry/Dept Name"
-                      value=""
-                    />
+                    <input matInput type="text" formControlName="nodal_ministry_dept"
+                      placeholder="Mention Nodal Ministry/Dept Name" value="" />
+                    <div
+                      *ngIf="submitForm.get('nodal_ministry_dept')?.invalid && submitForm.get('nodal_ministry_dept')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('nodal_ministry_dept')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <!-- <tr>
@@ -504,247 +606,377 @@
                     />
                   </td>
                 </tr> -->
-               
+
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
-                      
-                      <span class="table-sr-no">1.12</span> <span>School Category (code)<sup>&#64;&#64;</sup></span>
+
+                      <span class="table-sr-no">1.13</span> <span>School Category (code)<sup>&#64;&#64;</sup></span>
                     </div>
                   </td>
                   <td>
-                    <input matInput 
-                      type="text"
-                      name="school_category"
-                      placeholder="Enter School Category"
-                      value=""
-                    />
+                    <input matInput type="number" formControlName="schoolCategoryCode"
+                      placeholder="Enter School Category" />
+                    <div
+                      *ngIf="submitForm.get('schoolCategoryCode')?.invalid && submitForm.get('schoolCategoryCode')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('schoolCategoryCode')?.hasError('required')">This field is
+                        required</span>
+                    </div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.13</span> Type of the School<sup>&#64;&#64;</sup>
+                    <span class="table-sr-no">1.15</span> Type of the School<sup>&#64;&#64;</sup>
                   </td>
                   <td>
-                    <mat-select >
+                    <mat-select formControlName="typeOfSchoolD">
                       <mat-option [value]="1">1-Boys</mat-option>
                       <mat-option [value]="2">2-Girls</mat-option>
                       <mat-option [value]="3">3-Co-Educational</mat-option>
                     </mat-select>
-                   
+                    <div *ngIf="submitForm.get('typeOfSchoolD')?.invalid && submitForm.get('typeOfSchoolD')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('typeOfSchoolD')?.hasError('required')">This field is
+                        required</span>
+                    </div>
+
                   </td>
                 </tr>
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
-                      
-                      <span class="table-sr-no">1.14</span> <span>Affiliation Board of the school for SECONDARY Sections<sup>&#64;&#64;</sup></span>
+
+                      <span class="table-sr-no">1.16</span> <span>Affiliation Board of the school for SECONDARY
+                        Sections<sup>&#64;&#64;</sup></span>
                     </div>
                   </td>
                   <td>
-                    <mat-select >
-                     <mat-option [value]="1">1-CBSE</mat-option>
-                     <mat-option [value]="2">2-State Board</mat-option>
-                     <mat-option [value]="3">3-ICSE</mat-option>
-                     <mat-option [value]="4">4-International Board</mat-option>
-                     <mat-option [value]="5">6-Both CBSE and State Board</mat-option>
-                     <mat-option [value]="6">7-Madarsa Board</mat-option>
-                     <mat-option [value]="7">8-Sanskrit Board</mat-option>
+                    <mat-select formControlName="affiliateBoardD">
+                      <mat-option [value]="1">1-CBSE</mat-option>
+                      <mat-option [value]="2">2-State Board</mat-option>
+                      <mat-option [value]="3">3-ICSE</mat-option>
+                      <mat-option [value]="4">4-International Board</mat-option>
+                      <mat-option [value]="5">6-Both CBSE and State Board</mat-option>
+                      <mat-option [value]="6">7-Madarsa Board</mat-option>
+                      <mat-option [value]="7">8-Sanskrit Board</mat-option>
                     </mat-select>
-                   
+
+                    <div
+                      *ngIf="submitForm.get('affiliateBoardD')?.invalid && submitForm.get('affiliateBoardD')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('affiliateBoardD')?.hasError('required')">This field is
+                        required</span>
+                    </div>
+
                   </td>
                 </tr>
-  
+
                 <tr>
                   <td class="d-flex ">
-                    <span class="table-sr-no">1.15</span> <span>Affiliation Board of the school for HIGHER SECONDARY Sections<sup>&#64;&#64;</sup></span>
+                    <span class="table-sr-no">1.17</span> <span>Affiliation Board of the school for HIGHER SECONDARY
+                      Sections<sup>&#64;&#64;</sup></span>
                   </td>
-                  <td >
-                    <mat-select >
-                     <mat-option [value]="1">1-CBSE</mat-option>
-                     <mat-option [value]="2">2-State Board</mat-option>
-                     <mat-option [value]="3">3-ICSE</mat-option>
-                     <mat-option [value]="4">4-International Board</mat-option>
-                     <mat-option [value]="5">6-Both CBSE and State Board</mat-option>
-                     <mat-option [value]="6">7-Madarsa Board</mat-option>
-                     <mat-option [value]="7">8-Sanskrit Board</mat-option>
+                  <td>
+                    <mat-select formControlName="affiliateBoardD2">
+                      <mat-option [value]="1">1-CBSE</mat-option>
+                      <mat-option [value]="2">2-State Board</mat-option>
+                      <mat-option [value]="3">3-ICSE</mat-option>
+                      <mat-option [value]="4">4-International Board</mat-option>
+                      <mat-option [value]="5">6-Both CBSE and State Board</mat-option>
+                      <mat-option [value]="6">7-Madarsa Board</mat-option>
+                      <mat-option [value]="7">8-Sanskrit Board</mat-option>
                     </mat-select>
-                   
+
+                    <div
+                      *ngIf="submitForm.get('affiliateBoardD2')?.invalid && submitForm.get('affiliateBoardD2')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('affiliateBoardD2')?.hasError('required')">This field is
+                        required</span>
+                    </div>
+
                   </td>
                 </tr>
                 <tr>
                   <td colspan="2" class="">
                     <div class="d-flex">
-  
-                      <span class="table-sr-no">1.16</span> <span> Respondent Details :(*Respondent = Person actually Responsible for filling this form)<sup>##</sup></span>
+
+                      <span class="table-sr-no">1.18</span> <span> Respondent Details :(*Respondent = Person actually
+                        Responsible for filling this form)<sup>##</sup></span>
                     </div>
                   </td>
-                 
+
                 </tr>
-               
+
                 <tr>
                   <td class="child" colspan="2">
-                   <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(a)</span> Respondent Type</label>
-                     
-                      <mat-select >
-                        <mat-option [value]="1"> 1- Head of the School/In-Charge</mat-option>
-                        <mat-option [value]="2">2-Teacher</mat-option>
-                        <mat-option [value]="3">3-School Administration Staff/Official/Clerk</mat-option>
-                        <mat-option [value]="4">4-InCharge from Block/District/Cluster</mat-option>
-                        <mat-option [value]="5">5-In-Charge from Other School</mat-option>
-                      </mat-select>
-                      
+                    <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(a)</span> Respondent Type</label>
+
+                        <mat-select formControlName="respondentTypeD">
+                          <mat-option [value]="1"> 1- Head of the School/In-Charge</mat-option>
+                          <mat-option [value]="2">2-Teacher</mat-option>
+                          <mat-option [value]="3">3-School Administration Staff/Official/Clerk</mat-option>
+                          <mat-option [value]="4">4-InCharge from Block/District/Cluster</mat-option>
+                          <mat-option [value]="5">5-In-Charge from Other School</mat-option>
+                        </mat-select>
+
+
+                        <div
+                          *ngIf="submitForm.get('respondentTypeD')?.invalid && submitForm.get('respondentTypeD')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('respondentTypeD')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Respondent Name</label>
+                        <input matInput type="text" formControlName="respondentName" placeholder="Enter Respondent Name"
+                          value="" />
+
+                        <div
+                          *ngIf="submitForm.get('respondentName')?.invalid && submitForm.get('respondentName')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('respondentName')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Mobile Number</label>
+                        <input matInput type="number" maxlength="10" formControlName="respondentMobNo"
+                          placeholder="Enter Mobile Number" value="" />
+                        <div
+                          *ngIf="submitForm.get('respondentMobNo')?.invalid && submitForm.get('respondentMobNo')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('respondentMobNo')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(b)</span>  Respondent Name</label>
-                      <input matInput  type="text" name="respondent_name" placeholder="Enter Respondent Name" value="" />
+                    <div class="d-flex w-33 justify-content-between align-items-center gap-3">
+
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Respondent Email</label>
+                        <input matInput type="email" formControlName="respondentEmail"
+                          placeholder="Enter Respondent Email" value="" />
+                        <div
+                          *ngIf="submitForm.get('respondentEmail')?.invalid && submitForm.get('respondentEmail')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('respondentEmail')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(c)</span>  Mobile Number</label>
-                      <input matInput  type="number" name="mobile_number" placeholder="Enter Mobile Number" value="" />
-                    </div>
-                   
-                   </div>
-                   <div class="d-flex w-33 justify-content-between align-items-center gap-3">
-                   
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(c)</span>  Respondent Email</label>
-                      <input matInput  type="email" name="respondent_email" placeholder="Enter Respondent Email" value="" />
-                    </div>
-                   </div>
-                   
+
                   </td>
-                
+
                 </tr>
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
-                      
-                      <span class="table-sr-no">1.17</span> <span>When does the academic session Start and End Date?<sup>&#64;&#64;</sup></span>
+
+                      <span class="table-sr-no">1.19</span> <span>When does the academic session Start and End
+                        Date?<sup>&#64;&#64;</sup></span>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex align-items-center gap-2">
-                      <input matInput 
-                      type="date"
-                      name="academic_session_start"
-                      placeholder="Enter Start Date"
-                      value=""
-                    />
-                    to
-                    <input matInput 
-                      type="date"
-                      name="academic_session_end_date"
-                      placeholder="Enter End Date"
-                      value=""
-                    />
+                      <!-- <input matInput type="date" formControlName="sessionStartDate" placeholder="Enter Start Date"
+                        value="" /> -->
+                      <mat-form-field appearance="outline" class="w-100">
+                        <input matInput formControlName="sessionStartDate" [matDatepicker]="picker"
+                          placeholder="Choose a date" readonly="true" (click)="picker.open()" />
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error>
+                          This field is required
+                        </mat-error>
+                      </mat-form-field>
+                      to
+                      <!-- <input matInput type="date" formControlName="sessionEndDate" placeholder="Enter End Date"
+                        value="" /> -->
+                      <mat-form-field appearance="outline" class="w-100">
+                        <input matInput formControlName="sessionEndDate" [matDatepicker]="picker2"
+                          placeholder="Choose a date" readonly="true" (click)="picker2.open()" />
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                        <mat-error>
+                          This field is required
+                        </mat-error>
+                      </mat-form-field>
                     </div>
-                    
+
                   </td>
                 </tr>
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
-                      
-                      <span class="table-sr-no">1.18</span> <span>Year of Establishment of school<sup>&#64;&#64;</sup></span>
+
+                      <span class="table-sr-no">1.20</span> <span>Year of Establishment of
+                        school<sup>&#64;&#64;</sup></span>
                     </div>
                   </td>
                   <td>
-                    <input matInput 
-                      type="date"
-                      name="year_of_establishment_of_school"
-                      placeholder="Enter Establishment Date"
-                      value=""   />
+                    <!-- <input matInput type="date" formControlName="yoe" placeholder="Enter Establishment Date" value="" />
+                      -->
+                    <mat-form-field appearance="outline" class="w-100">
+                      <input matInput formControlName="yoe" [matDatepicker]="picker3" placeholder="Choose a date"
+                        readonly="true" (click)="picker3.open()" />
+                      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                      <mat-datepicker #picker3></mat-datepicker>
+                      <mat-error>
+                        This field is required
+                      </mat-error>
+                    </mat-form-field>
                   </td>
                 </tr>
-  
+
                 <tr>
-                  <td colspan="2" >
+                  <td colspan="2">
                     <div class="d-flex">
-                      <span class="table-sr-no">1.19</span> <span>Year of Recognition (For Govt. Aided / Pvt. Unaided / Others Management Group Schools): <sup>##</sup></span>
-  
+                      <span class="table-sr-no">1.21</span> <span>Year of Recognition (For Govt. Aided / Pvt. Unaided /
+                        Others Management Group Schools): <sup>##</sup></span>
+
                     </div>
                   </td>
-                  
+
                 </tr>
                 <tr>
                   <td class="child" colspan="2">
-                   <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(a)</span> Primary</label>
-                      <input matInput  type="number" name="primary" placeholder="Enter Primary" value="" />
+                    <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(a)</span> Primary</label>
+                        <input matInput type="number" formControlName="yorPrimary" placeholder="Enter Primary"
+                          value="" />
+                        <div *ngIf="submitForm.get('yorPrimary')?.invalid && submitForm.get('yorPrimary')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('yorPrimary')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Upper Primary</label>
+                        <input matInput type="number" formControlName="yorUpperPrimary"
+                          placeholder="Enter Upper Primary" value="" />
+                        <div
+                          *ngIf="submitForm.get('yorUpperPrimary')?.invalid && submitForm.get('yorUpperPrimary')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('yorUpperPrimary')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Secondary</label>
+                        <input matInput type="number" formControlName="yorSecondary" placeholder="Enter Secondary"
+                          value="" />
+                        <div *ngIf="submitForm.get('yorSecondary')?.invalid && submitForm.get('yorSecondary')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('yorSecondary')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(b)</span>   Upper Primary</label>
-                      <input matInput  type="number" name="upper_primary" placeholder="Enter Upper Primary" value="" />
+                    <div class="d-flex justify-content-between align-items-center gap-3 w-33">
+
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Higher Secondary</label>
+                        <input matInput type="number" formControlName="yorHSecondary"
+                          placeholder="Enter Higher  Secondary" value="" />
+                        <div
+                          *ngIf="submitForm.get('yorHSecondary')?.invalid && submitForm.get('yorHSecondary')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('yorHSecondary')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(c)</span>  Secondary</label>
-                      <input matInput  type="number" name="secondary" placeholder="Enter Secondary" value="" />
-                    </div>
-                    
-                   </div>
-                   <div class="d-flex justify-content-between align-items-center gap-3 w-33">
-                   
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(c)</span> Higher  Secondary</label>
-                      <input matInput  type="number" name="higher_secondary" placeholder="Enter Higher  Secondary" value="" />
-                    </div>
-                   </div>
-                   
+
                   </td>
-                
+
                 </tr>
                 <tr>
                   <td colspan="2">
-                    <span class="table-sr-no">1.20</span>Year of upgradation of the school (if applicable) <sup>##</sup>
+                    <span class="table-sr-no">1.22</span>Year of upgradation of the school (if applicable) <sup>##</sup>
                   </td>
-                  
+
                 </tr>
                 <tr>
                   <td class="child" colspan="2">
-                   <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(a)</span> Primary to Upper Primary</label>
-                      <input matInput  type="number" name="upgradation_primary" placeholder="Enter  Primary to Upper Primary" value="" />
+                    <div class="d-flex justify-content-between align-items-center gap-3 mb-2">
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(a)</span> Primary to Upper
+                          Primary</label>
+                        <input matInput type="number" formControlName="upgradation_primary"
+                          placeholder="Enter  Primary to Upper Primary" value="" />
+                        <div
+                          *ngIf="submitForm.get('upgradation_primary')?.invalid && submitForm.get('upgradation_primary')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('upgradation_primary')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(b)</span> Upper Primary to
+                          Secondary</label>
+                        <input matInput type="number" formControlName="upgradation_upper_primary"
+                          placeholder="Enter  Primary to Secondary" value="" />
+                        <div
+                          *ngIf="submitForm.get('upgradation_upper_primary')?.invalid && submitForm.get('upgradation_upper_primary')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('upgradation_upper_primary')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Upper Primary to
+                          Secondary</label>
+                        <input matInput type="number" formControlName="upgradation_secondary"
+                          placeholder="Enter Upper Primary to Secondary" value="" />
+                        <div
+                          *ngIf="submitForm.get('upgradation_secondary')?.invalid && submitForm.get('upgradation_secondary')?.touched">
+                          <span style="color: red; padding-left: 12px;"
+                            *ngIf="submitForm.get('upgradation_secondary')?.hasError('required')">This field is
+                            required</span>
+                        </div>
+                      </div>
+
                     </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(b)</span>  Upper Primary to Secondary</label>
-                      <input matInput  type="number" name="upgradation_upper_primary" placeholder="Enter  Primary to Secondary" value="" />
-                    </div>
-                    <div class="input-group">
-                      <label for="" class="form-label">  <span class="table-sr-no">(c)</span> Upper Primary to Secondary</label>
-                      <input matInput  type="number" name="upgradation_secondary" placeholder="Enter Upper Primary to Secondary" value="" />
-                    </div>
-                    
-                   </div>
-                 
+
                   </td>
-                
+
                 </tr>
                 <tr>
-                  <td >
+                  <td>
                     <div class="d-flex">
-                      
-                      <span class="table-sr-no">1.21</span> <span>Is this a Special School for CWSN?<sup>&#64;&#64;</sup></span>
+
+                      <span class="table-sr-no">1.25</span> <span>Is this a Special School for
+                        CWSN?<sup>&#64;&#64;</sup></span>
                     </div>
                   </td>
                   <td>
                     <div class="d-flex align-items-center radio-location-type">
-                      <mat-radio-group name="school_location_type" class="d-flex w-100">
+                      <mat-radio-group formControlName="isCWSN" class="d-flex w-100">
                         <div class="d-flex align-items-center w-50">
-                          <mat-radio-button id="Yes" value="1-Yes">1-Yes</mat-radio-button>
+                          <mat-radio-button id="Yes" [value]="true">1-Yes</mat-radio-button>
                         </div>
                         <div class="d-flex align-items-center w-50">
-                          <mat-radio-button id="No" value="2-No">2-No</mat-radio-button>
+                          <mat-radio-button id="No" [value]="false">2-No</mat-radio-button>
                         </div>
                       </mat-radio-group>
                     </div>
-                    
-                   
-                    
+
+                    <div *ngIf="submitForm.get('isCWSN')?.invalid && submitForm.get('isCWSN')?.touched">
+                      <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('isCWSN')?.hasError('required')">This field is
+                        required</span>
+                    </div>
+
+
+
                   </td>
                 </tr>
               </tbody>
@@ -753,13 +985,13 @@
           <div class="col-md-12 d-flex justify-content-center mt-4 mb-2">
             <!-- <a  [routerLink]="['/my-profile']">Next</a> -->
             <!-- <button class="next-button" [routerLink]="['/my-profile2']">Next</button> -->
-            <a class="next-button" routerLink="/my-profile2">Next</a>
+            <a class="next-button" (click)="submitData()">Next</a>
             <!-- <button class="next-button" >Next</button> -->
           </div>
         </div>
-        
+
       </form>
-     
+
     </div>
   </div>
 </div>

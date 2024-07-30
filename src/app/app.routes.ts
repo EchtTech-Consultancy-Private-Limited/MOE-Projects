@@ -23,6 +23,46 @@ export const routes: Routes = [
       ),
     // children: myProfileChildRoutes,
   },
+  {
+    path: 'my-profile2',
+    loadChildren: () =>
+      import('./routes/my-profile-child2.routes').then(
+        (route) => route.myProfileChil2dRoutes
+      ),
+    // children: myProfileChildRoutes,
+  },
+  {
+    path: 'dashboardSchoolInstruction',
+    loadChildren: () =>
+      import('./routes/dashboardSchoolInstruction.routes').then(
+        (route) => route.dashboardSchoolInstruction
+      ),
+    // children: myProfileChildRoutes,
+  },
+  {
+    path: 'dashboardSchool',
+    loadChildren: () =>
+      import('./routes/dashboardSchool.routes').then(
+        (route) => route.dashboardSchool
+      ),
+    // children: myProfileChildRoutes,
+  },
+  {
+    path: 'blockDashboard',
+    loadChildren: () =>
+      import('./routes/blockDashboard.routes').then(
+        (route) => route.blockDashboard
+      ),
+    // children: myProfileChildRoutes,
+  },
+  {
+    path: 'dashboardSchoolwise',
+    loadChildren: () =>
+      import('./routes/dashboardSchoolwise.routes').then(
+        (route) => route.dashboardSchoolwise
+      ),
+    // children: myProfileChildRoutes,
+  },
 
   { path: '**', redirectTo: '/login' },
 ];
