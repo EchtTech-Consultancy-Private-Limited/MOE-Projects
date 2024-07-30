@@ -8,3 +8,10 @@ body { margin: 0; }
     letter-spacing: .0178571429em;
     // font-family: "Open Sans", sans-serif !important;
 }
+
+.form-control {
+    font-size: 14px !important;
+    option{
+        font-size: 14px !important;
+    }
+}
