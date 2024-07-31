@@ -7,12 +7,23 @@ import { environment } from "../../environments/environment";
   providedIn: "root",
 })
 export class CommonService {
+  sudise :any
+  udiseCode :any
   private apiUrl =
     // "http://e74c-2402-e280-4117-34-79da-f2ad-e8d-c478.ngrok-free.app/users/register";
 
     "http://localhost:8080/users/register";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+
+
+    if(localStorage.getItem("profile") ){
+      const dise:any = localStorage.getItem("profile")
+      this.sudise = JSON.parse(dise)
+      this.udiseCode = this.sudise.udiseCode
+    }
+   
+  }
 
   registerUser(username: string, password: string): Observable<any> {
     const headers = new HttpHeaders({
@@ -48,10 +59,10 @@ export class CommonService {
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
     });
-    const udiseId = "16030601304";
+    
     const body = payload;
     return this.http.post(
-      "http://localhost:8080/udise/schools/16030601304/form2",
+      `http://localhost:8080/udise/schools/${this.udiseCode}/form2`,
       body,
       { headers }
     );
@@ -60,11 +71,11 @@ export class CommonService {
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
     });
-    const udiseId = "16030601304";
+    
     const body = payload;
     return this.http.post(
       // "http://5aff-2402-e280-4117-34-c9ea-b3d-6560-660a.ngrok-free.app/udise/schools/16030601304/form1",
-      "http://localhost:8080/udise/schools/16030601304/form1",
+      `http://localhost:8080/udise/schools/${this.udiseCode}/form1`,
       body,
       { headers }
     );
@@ -73,12 +84,18 @@ export class CommonService {
   getProfileDataOne() {
     return this.http.get(
       // "http://5aff-2402-e280-4117-34-c9ea-b3d-6560-660a.ngrok-free.app/udise/schools/16030601304/form2"
-      "http://localhost:8080/udise/schools/16030601304/form2"
+      `http://localhost:8080/udise/schools/${this.udiseCode}/form2`
     );
   }
   getProfileDataForm1() {
+    console.log("${this.udiseCode}",this.udiseCode)
     return this.http.get(
-      "http://localhost:8080/udise/schools/16030601304/form1"
+      `http://localhost:8080/udise/schools/${this.udiseCode}/form1`
+    );
+  }
+  getProfileData() {
+    return this.http.get(
+      "http://localhost:8080/users/info"
     );
   }
 }

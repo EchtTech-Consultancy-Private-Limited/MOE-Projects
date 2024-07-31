@@ -5,8 +5,7 @@ import { AlertServiceService } from '../common/aleart.service';
 export const loginGuardGuard: CanActivateFn = (route, state) => {
   const _router = inject(Router);
   const _alert = inject(AlertServiceService);
-  // let isToken = sessionStorage.getItem('token');
-  let isToken = ''
+  let isToken = sessionStorage.getItem('token');
 
   if (isToken == '' || isToken == null || isToken == undefined) {
     // _alert.swalPopErrorTimer('Not Authorised !! Redirecting Back to Login Page ');

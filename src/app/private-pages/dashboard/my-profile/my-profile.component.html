@@ -6,15 +6,15 @@
           <li>
             <p>
               School :
-              <span class="value"><a href="#">Abhoynagar English Medium School Pry</a></span>
+              <span class="value"><a href="#">{{sudise.schoolName}}</a></span>
             </p>
           </li>
           <li>
-            <p>Category : <span class="value">1 - Primary</span></p>
+            <p>Category : <span class="value">{{sudise.schoolCategory}}</span></p>
           </li>
           <li class="d-flex">
             <div>
-              <p>UDISE+ Code : <span class="value">16020801111</span></p>
+              <p>UDISE+ Code : <span class="value">{{sudise.udiseCode}}</span></p>
               <p><span class="value"> </span></p>
             </div>
 
@@ -68,9 +68,9 @@
       <div class="col-md-12  mt-2">
         <div class="d-flex justify-content-between">
           <div class="  ">
-            <button type="button" class="btn-dashboard">Back to Dashboard</button>
+            <button type="button" class="btn-dashboard" routerLink="/dashboard">Back to Dashboard</button>
           </div>
-          <button type="button" class="btn-dashboard">State Dashboard</button>
+          
         </div>
 
       </div>
@@ -541,17 +541,13 @@
 
                   </td>
                   <td>
-                    <mat-select formControlName="managementGroupOfSchoolD">
-                      <mat-option [value]="1"> A- State Government</mat-option>
-                      <mat-option [value]="2">B – Govt. Aided</mat-option>
-                      <mat-option [value]="3">C- Private Unaided</mat-option>
-                      <mat-option [value]="4">D- Central Government</mat-option>
-                      <mat-option [value]="5">E- Others</mat-option>
-                    </mat-select>
-                    <div
-                      *ngIf="submitForm.get('managementGroupOfSchoolD')?.invalid && submitForm.get('managementGroupOfSchoolD')?.touched">
+                 
+                    <input matInput type="text" formControlName="schoolManagementGroup"
+                    placeholder="Management Group of the School" value="" />
+                  <div
+                      *ngIf="submitForm.get('schoolManagementGroup')?.invalid && submitForm.get('schoolManagementGroup')?.touched">
                       <span style="color: red; padding-left: 12px;"
-                        *ngIf="submitForm.get('managementGroupOfSchoolD')?.hasError('required')">This field is
+                        *ngIf="submitForm.get('schoolManagementGroup')?.hasError('required')">This field is
                         required</span>
                     </div>
 
@@ -568,12 +564,12 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="schoolManagementGroup"
+                    <input matInput type="text" formControlName="schoolManagementCode"
                       placeholder="Management Code of School" value="" />
                     <div
-                      *ngIf="submitForm.get('schoolManagementGroup')?.invalid && submitForm.get('schoolManagementGroup')?.touched">
+                      *ngIf="submitForm.get('schoolManagementCode')?.invalid && submitForm.get('schoolManagementCode')?.touched">
                       <span style="color: red; padding-left: 12px;"
-                        *ngIf="submitForm.get('schoolManagementGroup')?.hasError('required')">This field is
+                        *ngIf="submitForm.get('schoolManagementCode')?.hasError('required')">This field is
                         required</span>
                     </div>
                   </td>
@@ -617,7 +613,7 @@
                     </div>
                   </td>
                   <td>
-                    <input matInput type="number" formControlName="schoolCategoryCode"
+                    <input matInput type="text" formControlName="schoolCategoryCode"
                       placeholder="Enter School Category" />
                     <div
                       *ngIf="submitForm.get('schoolCategoryCode')?.invalid && submitForm.get('schoolCategoryCode')?.touched">

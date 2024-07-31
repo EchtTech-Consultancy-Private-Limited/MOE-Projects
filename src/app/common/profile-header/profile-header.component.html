@@ -49,24 +49,28 @@
 
   </div>
   <span class="spacer laptop-spacer"></span>
+  <ng-container *ngIf="pro">
   <div class="rightsidebar-notification">
     <ul class="logDetails">
-      <li class="username">Welcome Shawez</li>
-      <li> Login IP <br> <span class="notification-vlaue"> 103.208.68.81 </span></li>
-      <li> Mobile No. <br> <span class="notification-vlaue"> 6255445466 </span></li>
-      <li>DISTRICT MIS <br> <span class="notification-vlaue"> DHALAI </span></li>
-      <li>Login Time <br> <span class="notification-vlaue"> 22-07-2024 09:45:09 </span></li>
+
+      <li class="username">{{profile.username}}</li>
+      <li> Login IP <br> <span class="notification-vlaue"> {{profile.ipAddress}} </span></li>
+      <li> Mobile No. <br> <span class="notification-vlaue"> {{profile.mobileNumber}} </span></li>
+      <li>DISTRICT MIS <br> <span class="notification-vlaue"> {{profile.districtName}} </span></li>
+      <li>Login Time <br> <span class="notification-vlaue"> {{profile.loggedInTime}} </span></li>
       <li><a mat-list-item style="cursor: pointer;" (click)="logout()"><img src="../../../assets/mobileLogout.svg"
             alt="logout"> <br> Logout</a>
       </li>
+    
     </ul>
   </div>
+</ng-container>
 </mat-toolbar>
 <mat-toolbar color="primary" class="menu-header">
 
   <div class="menu-header-left">
-    <a href="#"><i class="fa-solid fa-house-chimney"></i>Home</a>
-    <a href="#"><i class="fa-solid fa-user"></i>My Profile</a>
+    <!-- <a href="#"><i class="fa-solid fa-house-chimney"></i>Home</a>
+    <a href="#"><i class="fa-solid fa-user"></i>My Profile</a> -->
   </div>
   <span class="spacer laptop-spacer"></span>
   <div class="menu-header-right">

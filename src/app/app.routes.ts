@@ -15,7 +15,7 @@ export const routes: Routes = [
       import('./routes/dashboard.routes').then(
         (route) => route.dashboardRoutes
       ),
-      // canActivate: [loginGuardGuard],
+      canActivate: [loginGuardGuard],
   },
   {
     path: 'my-profile',
@@ -24,7 +24,7 @@ export const routes: Routes = [
         (route) => route.myProfileChildRoutes
       ),
     // children: myProfileChildRoutes,
-    // canActivate: [loginGuardGuard],
+    canActivate: [loginGuardGuard],
   },
   {
     path: 'my-profile2',
@@ -33,7 +33,7 @@ export const routes: Routes = [
         (route) => route.myProfileChil2dRoutes
       ),
     // children: myProfileChildRoutes,
-    // canActivate: [loginGuardGuard],
+    canActivate: [loginGuardGuard],
   },
   {
     path: 'dashboardSchoolInstruction',

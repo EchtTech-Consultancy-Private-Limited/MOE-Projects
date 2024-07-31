@@ -40,6 +40,8 @@ import { CommonModule } from "@angular/common";
 export class MyProfileComponent implements OnInit {
   submitForm: FormGroup;
   formOneData: any;
+  sudise: any;
+  udiseCode: any;
   constructor(
     private _fb: FormBuilder,
     private _router: Router,
@@ -50,6 +52,11 @@ export class MyProfileComponent implements OnInit {
     this.submitForm = this.getFormControls();
     this.myProfileDataTwo();
     this.dateAdapter.setLocale("en-GB");
+    const dise:any = localStorage.getItem("profile")
+    this.sudise = JSON.parse(dise)
+    this.udiseCode = this.sudise.udiseCode
+
+    console.log("usdoeoee",this.udiseCode )
   }
   ngOnInit(): void { }
 
@@ -182,7 +189,7 @@ export class MyProfileComponent implements OnInit {
       return;
     } else {
       const payload = {
-        udiseCode: "16030601304",
+        udiseCode: this.udiseCode,
         //schoolName: this.submitForm.value.schoolName,
         //districtName: this.submitForm.value.districtName,
         //udiseBlockName: this.submitForm.value.udiseBlockName,
@@ -211,8 +218,8 @@ export class MyProfileComponent implements OnInit {
         // hosName: "2",
         hosMobNo: this.submitForm.value.hosMobNo,
         hosEmail: this.submitForm.value.hosEmail,
-        //schoolManagementGroup: this.submitForm.value.schoolManagementGroup,
-        schoolManagementCode: this.submitForm.value.schoolManagementCode,
+        schoolManagementGroup: this.submitForm.value.schoolManagementGroup,
+        // schoolManagementCode: this.submitForm.value.schoolManagementCode,
         // schoolManagementCode: 1234,
         //schoolCategoryCode: this.submitForm.value.schoolCategoryCode,
         schoolType: this.submitForm.value.schoolType,
@@ -240,60 +247,10 @@ export class MyProfileComponent implements OnInit {
         youScrToHscr: this.submitForm.value.youScrToHscr,
         // youPrToUpr: 12,
         // youUprToScr: 12,
-        // youScrToHscr: 12,
+        // youScrToHsc2r: 12,
         isCWSN: this.submitForm.value.isCWSN,
       };
-      // const payload = {
-      //   udiseCode: "1234567890",
-      //   schoolName: "ssss",
-      //   districtName: "ssss",
-      //   udiseBlockName: "ssss",
-      //   schoolLocationType: "ssss",
-      //   revenueBlock: "sss",
-      //   villName: "sss",
-      //   gramPanchName: "sdfsssfs",
-      //   urbanLB: "sdffsdf",
-      //   wardName: "sfdsdf",
-      //   schoolAddress: "sdfs",
-      //   pinCode: 43242,
-      //   crcName: "dssdsf",
-      //   asmblyConstName: "sfdfsf",
-      //   parlmntConstName: "sdfsfd",
-      //   latitude: 0.12,
-      //   longitude: 0.13,
-      //   stdCode: 33,
-      //   landlineNo: 33,
-      //   mobileNo: 33,
-      //   email: "fdgdgd@mail.com",
-      //   website: "www.np.com",
-      //   hos: "dssf",
-      //   hosName: "2",
-      //   hosMobNo: 33,
-      //   hosEmail: "sdsdf@mail.com",
-      //   schoolManagementGroup: "fdfd",
-      //   schoolManagementCode: 33,
-      //   schoolCategoryCode: 33,
-      //   schoolType: 33,
-      //   affiliationBoardSS: 33,
-      //   affiliationBoardHS: 33,
-      //   respondentType: 33,
-      //   respondentName: "rrrrrrrrrr",
-      //   respondentMobNo: 33,
-      //   respondentEmail: "abc@mail.com",
-      //   sessionStartDate: "2024-07-14T18:30:00.000Z",
-      //   sessionEndDate: "2024-07-12T18:30:00.000Z",
-      //   yoe: "2024-07-25T18:30:00.000Z",
-      //   yor: 33,
-      //   yorPrimary: 33,
-      //   yorUpperPrimary: 333,
-      //   yorSecondary: 33,
-      //   yorHSecondary: 33,
-      //   youPrToUpr: 33,
-      //   youUprToScr: 33,
-      //   youScrToHscr: 33,
-      //   isCWSN: false,
-      // };
-      console.log(payload);
+      
 
       this._commonService.saveSchoolProfile1(payload).subscribe({
         next: (res) => {
@@ -302,8 +259,8 @@ export class MyProfileComponent implements OnInit {
           this._router.navigateByUrl("/my-profile2");
         },
         error: (err) => {
-          this._aleartService.swalPopError("Failed");
-          console.log(err);
+          this._aleartService.swalPopError(err.error.error);
+          console.log("shubhm",err.error);
         },
       });
     }
