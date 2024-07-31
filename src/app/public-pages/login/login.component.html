@@ -49,7 +49,7 @@
               autocomplete="off" class="m-b-40" [formGroup]="loginForm">
               <div class="auth-box px-4">
                 <h3 class="logintitle207">Login for DCF Data Entry and Monitor</h3>
-
+              
                 <mat-form-field class="input-group">
                   <mat-label>User Name:</mat-label>
                   <input matInput placeholder="Enter Your User Name" formControlName="userName" />
@@ -59,10 +59,12 @@
                   <mat-label>Password:</mat-label>
                   <input matInput placeholder="Enter Your Password" formControlName="password" />
                 </mat-form-field>
-
+                <div *ngIf="invalid" style="color: red; font-size: 14px; margin-bottom: 18px; margin-top: -10px;">
+                  {{invalid}}
+                </div>
                 <div class="clearfix">
                   <div class="float-start">
-                    <label class="float-label">Captcha: </label>
+                    <label class="float-label" style="margin-bottom: 12px; font-size: 16px;">Captcha: </label>
                   </div>
                   <div class="float-end">
                     <label id="captcha-error" class="error" for="captcha"></label>
@@ -98,10 +100,10 @@
                   <div class="float-start mt-2">
                     <a href="#" class="waves-effect waves-dark"><span class="pcoded-mtext">Forgot Password</span></a>
                   </div>
-                  <div class="float-end mt-2">
+                  <!-- <div class="float-end mt-2">
                     <a href="#" class="waves-effect waves-dark text-danger"><span class="pcoded-mtext">Login with
                         Other</span></a>
-                  </div>
+                  </div> -->
                   <div class="float-end mt-2"></div>
                 </div>
               </div>
