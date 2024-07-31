@@ -283,12 +283,14 @@
                   </td>
                   <td>
 
-                    <input matInput type="number" maxlength="6" formControlName="pinCode"
-                      placeholder="Enter Pin Code" />
+                    <input matInput type="text" maxlength="6" formControlName="pinCode"
+                      placeholder="Enter Pin Code" pattern="[0-9]*" title="Please enter a valid number" />
                     <div *ngIf="submitForm.get('pinCode')?.invalid && submitForm.get('pinCode')?.touched">
                       <span style="color: red; padding-left: 12px;"
                         *ngIf="submitForm.get('pinCode')?.hasError('required')">This field is
                         required</span>
+                        <span style="color: red; padding-left: 12px;"
+                        *ngIf="submitForm.get('pinCode')?.hasError('pattern')">Please enter a valid number</span>
                     </div>
                   </td>
                 </tr>

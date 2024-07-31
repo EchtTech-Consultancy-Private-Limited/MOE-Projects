@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
   captcha: any;
   userCaptchaInput: any;
   loginForm!: FormGroup;
+  invalid: any;
   constructor(
     private _fb: FormBuilder,
     private _route: Router,
@@ -103,13 +104,19 @@ export class LoginComponent implements OnInit {
       this._commonService.loginUser(userName, password).subscribe({
         next: (res) => {
           console.log("shubham", res);
-          this._aleartService.swalPopSuccess("Login Successfully");
+          //this._aleartService.swalPopSuccess("Login Successfully");
           sessionStorage.setItem("token", res.token);
           this._route.navigateByUrl("/dashboard");
         },
         error: (err) => {
           console.error("Login Error:", err);
-          this._aleartService.swalPopError("Login Failed");
+          this.generateCaptcha();
+          // this._aleartService.swalPopError("Invalid Username/Password, Please check !");
+          this.invalid = "Invalid Username/Password, Please check !"
+          setTimeout(() => {
+            this.invalid = '';
+          }, 5000);
+          return;
         },
       });
     } else {

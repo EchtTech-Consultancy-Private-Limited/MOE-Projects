@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { loginGuardGuard } from './Guards/login-guard.guard';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,7 @@ export const routes: Routes = [
       import('./routes/dashboard.routes').then(
         (route) => route.dashboardRoutes
       ),
+      // canActivate: [loginGuardGuard],
   },
   {
     path: 'my-profile',
@@ -22,6 +24,7 @@ export const routes: Routes = [
         (route) => route.myProfileChildRoutes
       ),
     // children: myProfileChildRoutes,
+    // canActivate: [loginGuardGuard],
   },
   {
     path: 'my-profile2',
@@ -30,6 +33,7 @@ export const routes: Routes = [
         (route) => route.myProfileChil2dRoutes
       ),
     // children: myProfileChildRoutes,
+    // canActivate: [loginGuardGuard],
   },
   {
     path: 'dashboardSchoolInstruction',
@@ -38,6 +42,7 @@ export const routes: Routes = [
         (route) => route.dashboardSchoolInstruction
       ),
     // children: myProfileChildRoutes,
+    canActivate: [loginGuardGuard],
   },
   {
     path: 'dashboardSchool',
@@ -46,6 +51,7 @@ export const routes: Routes = [
         (route) => route.dashboardSchool
       ),
     // children: myProfileChildRoutes,
+    canActivate: [loginGuardGuard],
   },
   {
     path: 'blockDashboard',
@@ -54,6 +60,7 @@ export const routes: Routes = [
         (route) => route.blockDashboard
       ),
     // children: myProfileChildRoutes,
+    canActivate: [loginGuardGuard],
   },
   {
     path: 'dashboardSchoolwise',
@@ -62,6 +69,7 @@ export const routes: Routes = [
         (route) => route.dashboardSchoolwise
       ),
     // children: myProfileChildRoutes,
+    canActivate: [loginGuardGuard],
   },
 
   { path: '**', redirectTo: '/login' },
