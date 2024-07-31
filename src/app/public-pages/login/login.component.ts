@@ -105,9 +105,9 @@ export class LoginComponent implements OnInit {
         next: (res) => {
           console.log("shubham", res);
           //this._aleartService.swalPopSuccess("Login Successfully");
-          sessionStorage.setItem("token", res.token);
+          sessionStorage.setItem("token", res.access_token);
           this._route.navigateByUrl("/dashboard");
-        },
+           },
         error: (err) => {
           console.error("Login Error:", err);
           this.generateCaptcha();
