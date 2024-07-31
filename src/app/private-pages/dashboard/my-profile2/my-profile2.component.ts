@@ -126,7 +126,7 @@ export class MyProfile2Component implements OnInit {
     } else {
       console.log(this.submitForm.value);
       const payload = {
-        udiseCode: "2134573",
+        udiseCode: "16030601304",
         isShiftSchool: this.submitForm.value.isShiftSchool,
         isResidentialSchool: this.submitForm.value.isResidentialSchool,
         isMinorityManaged: this.submitForm.value.isMinorityManaged,
@@ -135,14 +135,14 @@ export class MyProfile2Component implements OnInit {
         offersPreVocationalTraining:
           this.submitForm.value.offersPreVocationalTraining,
         hasAfterHoursTraining: this.submitForm.value.hasAfterHoursTraining,
-        // distanceFromPrimary: this.submitForm.value.distanceFromPrimary,
-        distanceFromPrimary: 0.1,
-        // distanceFromUprPrimary: this.submitForm.value.distanceFromUprPrimary,
-        distanceFromUprPrimary: 0.5,
-        // distanceFromSecondary: this.submitForm.value.distanceFromSecondary,
-        distanceFromSecondary: 0.1,
-        // distanceFromHS: this.submitForm.value.distanceFromHS,
-        distanceFromHS: 0.2,
+        distanceFromPrimary: this.submitForm.value.distanceFromPrimary,
+        //distanceFromPrimary: 0.1,
+        distanceFromUprPrimary: this.submitForm.value.distanceFromUprPrimary,
+        //distanceFromUprPrimary: 0.5,
+        distanceFromSecondary: this.submitForm.value.distanceFromSecondary,
+        //distanceFromSecondary: 0.1,
+        distanceFromHS: this.submitForm.value.distanceFromHS,
+        //distanceFromHS: 0.2,
         hasAllWeatherRoads: this.submitForm.value.hasAllWeatherRoads,
         instructionalDaysNo: +this.submitForm.value.instructionalDaysNo,
         isCCE: this.submitForm.value.isCCE,
@@ -151,8 +151,8 @@ export class MyProfile2Component implements OnInit {
       this._commonService.saveSchoolProfile2(payload).subscribe({
         next: (res) => {
           console.log("shubham==>", res);
-          this._aleartService.swalPopSuccess("Data Saved Successfully");
-          this._router.navigateByUrl("/dashboard");
+         this._aleartService.swalPopSuccess("Details Saved Successfully");
+        // this._router.navigateByUrl("/dashboard");
         },
         error: (err) => {
           this._aleartService.swalPopError("Failed");

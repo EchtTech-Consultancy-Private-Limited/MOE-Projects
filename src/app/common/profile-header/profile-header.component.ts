@@ -28,6 +28,6 @@ export class ProfileHeaderComponent implements OnInit {
     setTimeout(() => {
       this._router.navigateByUrl("/");
     }, 0);
-    this._aleartService.swalPopSuccess("Logout Successfully");
+    //this._aleartService.swalPopSuccess("Logout Successfully");
   }
 }

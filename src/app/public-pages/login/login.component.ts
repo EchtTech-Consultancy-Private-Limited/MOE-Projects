@@ -103,7 +103,7 @@ export class LoginComponent implements OnInit {
       this._commonService.loginUser(userName, password).subscribe({
         next: (res) => {
           console.log("shubham", res);
-          this._aleartService.swalPopSuccess("Login Successfully");
+          //this._aleartService.swalPopSuccess("Login Successfully");
           sessionStorage.setItem("token", res.token);
           this._route.navigateByUrl("/dashboard");
         },
