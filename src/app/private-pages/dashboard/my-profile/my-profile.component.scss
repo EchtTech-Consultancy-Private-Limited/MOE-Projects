@@ -43,6 +43,10 @@ label.form-label, input, span, .child {
   mat-label {
     font-size: 13px;
 }
+.mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper {
+    padding: 0 !important;
+    white-space: nowrap;
+}
   .cdk-overlay-pane div.mat-mdc-select-panel {
     left: -8px;
     position: absolute;

@@ -14,6 +14,10 @@ a{
       -webkit-appearance: none;
       margin: 0;
     }
+    .mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper {
+        padding: 0 !important;
+        white-space: nowrap;
+    }
     mat-label {
         font-size: 13px;
         margin-bottom: 9px !important;
