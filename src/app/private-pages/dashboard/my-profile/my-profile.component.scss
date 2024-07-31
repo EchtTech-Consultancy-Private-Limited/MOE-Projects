@@ -47,6 +47,10 @@ label.form-label, input, span, .child {
     padding: 0 !important;
     white-space: nowrap;
 }
+.error-message{
+    color: red !important;
+    padding-left: 8px;
+}
   .cdk-overlay-pane div.mat-mdc-select-panel {
     left: -8px;
     position: absolute;
