@@ -9,13 +9,14 @@ import {
   HashLocationStrategy,
   LocationStrategy,
 } from "@angular/common";
+import { tokenInterceptor } from "./common/token.interceptor";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     provideRouter(routes),
     provideAnimations(),
-    provideHttpClient(withInterceptors([])),
+    provideHttpClient(withInterceptors([tokenInterceptor])),
     DatePipe,
     NgModule,
     // provideToastr(), // Toastr providers

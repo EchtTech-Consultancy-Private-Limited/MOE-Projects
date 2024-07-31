@@ -9,12 +9,9 @@ import { Router } from "@angular/router";
 // };
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
-  // const token = getToken();
-  const token =
-    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MSIsImlhdCI6MTcyMjI0ODU2NywiZXhwIjoxNzIyNjgwNTY3fQ.42RdEdJzlM_ZkP5snaPV_miZBzH3vUjlVaylEYxffK0";
-  console.log(sessionStorage.getItem("token"));
+  const token = getToken();
+ console.log("token in inr", token )
   const router = inject(Router);
-
   if (token) {
     var cloned = req.clone({
       setHeaders: {

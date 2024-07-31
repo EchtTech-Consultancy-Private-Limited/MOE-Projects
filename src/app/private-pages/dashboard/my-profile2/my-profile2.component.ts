@@ -40,6 +40,8 @@ import { MatInputModule } from "@angular/material/input";
 export class MyProfile2Component implements OnInit {
   submitForm: FormGroup;
   formtwoData: any;
+  udiseCode:any
+  sudise:any
   constructor(
     private _fb: FormBuilder,
     private _commonService: CommonService,
@@ -48,6 +50,11 @@ export class MyProfile2Component implements OnInit {
   ) {
     this.submitForm = this.getFormControls();
     this.myProfileDataOne();
+    const dise:any = localStorage.getItem("profile")
+    this.sudise = JSON.parse(dise)
+    this.udiseCode = this.sudise.udiseCode
+
+    console.log("usdoeoee",this.udiseCode )
   }
   ngOnInit() {}
 
@@ -126,7 +133,7 @@ export class MyProfile2Component implements OnInit {
     } else {
       console.log(this.submitForm.value);
       const payload = {
-        udiseCode: "16030601304",
+        udiseCode: this.udiseCode,
         isShiftSchool: this.submitForm.value.isShiftSchool,
         isResidentialSchool: this.submitForm.value.isResidentialSchool,
         isMinorityManaged: this.submitForm.value.isMinorityManaged,
@@ -140,9 +147,9 @@ export class MyProfile2Component implements OnInit {
         distanceFromUprPrimary: this.submitForm.value.distanceFromUprPrimary,
         //distanceFromUprPrimary: 0.5,
         distanceFromSecondary: this.submitForm.value.distanceFromSecondary,
-        //distanceFromSecondary: 0.1,
+        // distanceFromSecondary1: 0.1,
         distanceFromHS: this.submitForm.value.distanceFromHS,
-        //distanceFromHS: 0.2,
+        // distanceFromHSw: 0.2,
         hasAllWeatherRoads: this.submitForm.value.hasAllWeatherRoads,
         instructionalDaysNo: +this.submitForm.value.instructionalDaysNo,
         isCCE: this.submitForm.value.isCCE,
@@ -155,8 +162,9 @@ export class MyProfile2Component implements OnInit {
         // this._router.navigateByUrl("/dashboard");
         },
         error: (err) => {
-          this._aleartService.swalPopError("Failed");
-          console.log(err);
+          console.log("ee",err)
+          this._aleartService.swalPopError(err.error.error);
+          
         },
       });
     }
