@@ -14,6 +14,10 @@ a{
       -webkit-appearance: none;
       margin: 0;
     }
+    .error-message{
+        color: red !important;
+        padding-left: 8px;
+    }
     .mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper {
         padding: 0 !important;
         white-space: nowrap;

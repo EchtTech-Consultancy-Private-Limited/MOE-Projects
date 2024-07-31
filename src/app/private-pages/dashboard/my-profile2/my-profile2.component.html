@@ -111,7 +111,7 @@
                       </mat-radio-group>
                     </div>
                     <div *ngIf="submitForm.get('isShiftSchool')?.invalid && submitForm.get('isShiftSchool')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('isShiftSchool')?.hasError('required')">This field
                         is
                         required</span>
@@ -132,7 +132,7 @@
                     </mat-select>
                     <div
                       *ngIf="submitForm.get('isResidentialSchool')?.invalid && submitForm.get('isResidentialSchool')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('isResidentialSchool')?.hasError('required')">This field is
                         required</span>
                     </div> -->
@@ -154,7 +154,7 @@
                     </div>
                     <div
                       *ngIf="submitForm.get('isResidentialSchool')?.invalid && submitForm.get('isResidentialSchool')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('isResidentialSchool')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -198,7 +198,7 @@
                     </div>
                     <div
                       *ngIf="submitForm.get('isMinorityManaged')?.invalid && submitForm.get('isMinorityManaged')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('isMinorityManaged')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -245,7 +245,7 @@
                     </div>
                     <div
                       *ngIf="submitForm.get('isMotherTongueTaughtPrimary')?.invalid && submitForm.get('isMotherTongueTaughtPrimary')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('isMotherTongueTaughtPrimary')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -275,7 +275,7 @@
                     </div>
                     <div
                       *ngIf="submitForm.get('offersPreVocationalTraining')?.invalid && submitForm.get('offersPreVocationalTraining')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('offersPreVocationalTraining')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -305,7 +305,7 @@
 
                     <div
                       *ngIf="submitForm.get('hasAfterHoursTraining')?.invalid && submitForm.get('hasAfterHoursTraining')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('hasAfterHoursTraining')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -333,7 +333,7 @@
                     <input matInput type="number" formControlName="distanceFromPrimary" placeholder="Enter distance" />
                     <div
                       *ngIf="submitForm.get('distanceFromPrimary')?.invalid && submitForm.get('distanceFromPrimary')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('distanceFromPrimary')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -353,7 +353,7 @@
                       placeholder="Enter distance" />
                     <div
                       *ngIf="submitForm.get('distanceFromUprPrimary')?.invalid && submitForm.get('distanceFromUprPrimary')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('distanceFromUprPrimary')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -385,7 +385,7 @@
                       placeholder="Enter distance" />
                     <div
                       *ngIf="submitForm.get('distanceFromSecondary')?.invalid && submitForm.get('distanceFromSecondary')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('distanceFromSecondary')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -402,7 +402,7 @@
                     <mat-label>Distance from Primary</mat-label>
                     <input matInput type="number" formControlName="distanceFromHS" placeholder="Enter distance" />
                     <div *ngIf="submitForm.get('distanceFromHS')?.invalid && submitForm.get('distanceFromHS')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('distanceFromHS')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -438,7 +438,7 @@
 
                     <div
                       *ngIf="submitForm.get('hasAllWeatherRoads')?.invalid && submitForm.get('hasAllWeatherRoads')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('hasAllWeatherRoads')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -458,7 +458,7 @@
                     <input matInput type="number" formControlName="instructionalDaysNo" placeholder="Enter distance" />
                     <div
                       *ngIf="submitForm.get('instructionalDaysNo')?.invalid && submitForm.get('instructionalDaysNo')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('instructionalDaysNo')?.hasError('required')">This field is
                         required</span>
                     </div>
@@ -538,7 +538,7 @@
                     </div>
 
                     <div *ngIf="submitForm.get('isCCE')?.invalid && submitForm.get('isCCE')?.touched">
-                      <span style="color: red; padding-left: 12px;"
+                      <span class="error-message"
                         *ngIf="submitForm.get('isCCE')?.hasError('required')">This field is
                         required</span>
                     </div>
