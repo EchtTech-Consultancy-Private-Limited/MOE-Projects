@@ -95,10 +95,10 @@
                   <td>
 
                     <span class="table-sr-no">1.1</span> School Name (In capital
-                    letters) <sup>&#64;&#64;</sup>
+                    letters) 
                   </td>
                   <td>
-                    <input matInput type="text" formControlName="schoolName" placeholder="Enter School Name" />
+                    <input matInput type="text" formControlName="schoolName" placeholder="Enter School Name" class="text-uppercase" readonly/>
                     <div *ngIf="submitForm.get('schoolName')?.invalid && submitForm.get('schoolName')?.touched">
                       <span style="color: red; padding-left: 12px;"
                         *ngIf="submitForm.get('schoolName')?.hasError('required')">This field is
@@ -109,11 +109,11 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.2</span> Name of the District<sup>&#64;&#64;</sup>
+                    <span class="table-sr-no">1.2</span> Name of the District
                   </td>
                   <td>
 
-                    <input matInput type="text" formControlName="districtName" placeholder="Enter District Name" />
+                    <input matInput type="text" formControlName="districtName" placeholder="Enter District Name" readonly/>
                     <div *ngIf="submitForm.get('districtName')?.invalid && submitForm.get('districtName')?.touched">
                       <span style="color: red; padding-left: 12px;"
                         *ngIf="submitForm.get('districtName')?.hasError('required')">This field is
@@ -123,11 +123,11 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.3</span> Name of the UDISE+ Block<sup>&#64;&#64;</sup>
+                    <span class="table-sr-no">1.3</span> Name of the UDISE+ Block
                   </td>
                   <td>
 
-                    <input matInput type="text" formControlName="udiseBlockName" placeholder="Enter District Name" />
+                    <input matInput type="text" formControlName="udiseBlockName" placeholder="Enter UDISE+ Block Name" readonly/>
                     <div *ngIf="submitForm.get('udiseBlockName')?.invalid && submitForm.get('udiseBlockName')?.touched">
                       <span style="color: red; padding-left: 12px;"
                         *ngIf="submitForm.get('udiseBlockName')?.hasError('required')">This field is
@@ -140,7 +140,7 @@
                     <div class="d-flex">
 
                       <span class="table-sr-no">1.4</span><span> School Location Type (1-Rural,
-                        2-Urban)<sup>&#64;&#64;</sup></span>
+                        2-Urban)</span>
                     </div>
                   </td>
                   <td>
@@ -265,7 +265,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.5</span> School Address<sup>&#64;&#64;</sup>
+                    <span class="table-sr-no">1.5</span> School Address
                   </td>
                   <td>
 
@@ -279,7 +279,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.6</span> Pin Code<sup>&#64;&#64;</sup>
+                    <span class="table-sr-no">1.6</span> Pin Code
                   </td>
                   <td>
 
@@ -297,7 +297,7 @@
                     <div class="d-flex">
 
                       <span class="table-sr-no">1.7</span> <span>Name of the Cluster Resource Centre
-                        (CRC)<sup>&#64;&#64;</sup></span>
+                        (CRC)</span>
                     </div>
                   </td>
                   <td>
@@ -353,7 +353,8 @@
 
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.10</span> School Contact Details <sup>##</sup>
+                    <span class="table-sr-no">1.10</span> School Contact Details 
+                    
                   </td>
                   <td>
                     
@@ -439,7 +440,8 @@
                   <td>
                     <div class="d-flex">
 
-                      <span class="table-sr-no">1.11</span> Head of the School (HoS) / In-Charge Details <sup>##</sup>
+                      <span class="table-sr-no">1.11</span> Head of the School (HoS) / In-Charge Details 
+                      
                     </div>
                   </td>
                   <td>
@@ -521,11 +523,7 @@
             </table>
           </div>
           <div class="col-md-6">
-            <div class="important">
-              <p>## : Can be updated at School Directory Management Portal. Click Here</p>
-
-              <p>&#64;&#64; : To update Contact Block MIS/ District MIS/ State MIS Level.</p>
-            </div>
+          
             <table class="w-100">
               <tbody>
 
@@ -539,13 +537,20 @@
 
                   </td>
                   <td>
-                    <mat-select formControlName="managementGroupOfSchoolD">
+                    <!-- <mat-select formControlName="managementGroupOfSchoolD">
                       <mat-option [value]="1"> A- State Government</mat-option>
                       <mat-option [value]="2">B – Govt. Aided</mat-option>
                       <mat-option [value]="3">C- Private Unaided</mat-option>
                       <mat-option [value]="4">D- Central Government</mat-option>
                       <mat-option [value]="5">E- Others</mat-option>
-                    </mat-select>
+                    </mat-select> -->
+                    <input matInput type="text" formControlName="managementGroupOfSchoolD"
+                    placeholder="Enter Management Group of the School" value="" readonly/>
+                  <div *ngIf="submitForm.get('managementGroupOfSchoolD')?.invalid && submitForm.get('managementGroupOfSchoolD')?.touched">
+                    <span style="color: red; padding-left: 12px;"
+                      *ngIf="submitForm.get('managementGroupOfSchoolD')?.hasError('required')">This field is
+                      required</span>
+                  </div>
                     <div
                       *ngIf="submitForm.get('managementGroupOfSchoolD')?.invalid && submitForm.get('managementGroupOfSchoolD')?.touched">
                       <span style="color: red; padding-left: 12px;"
@@ -611,12 +616,12 @@
                   <td>
                     <div class="d-flex">
 
-                      <span class="table-sr-no">1.13</span> <span>School Category (code)<sup>&#64;&#64;</sup></span>
+                      <span class="table-sr-no">1.13</span> <span>School Category (code)</span>
                     </div>
                   </td>
                   <td>
-                    <input matInput type="number" formControlName="schoolCategoryCode"
-                      placeholder="Enter School Category" />
+                    <input matInput type="text" formControlName="schoolCategoryCode"
+                      placeholder="Enter School Category" readonly/>
                     <div
                       *ngIf="submitForm.get('schoolCategoryCode')?.invalid && submitForm.get('schoolCategoryCode')?.touched">
                       <span style="color: red; padding-left: 12px;"
@@ -627,7 +632,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <span class="table-sr-no">1.15</span> Type of the School<sup>&#64;&#64;</sup>
+                    <span class="table-sr-no">1.15</span> Type of the School
                   </td>
                   <td>
                     <mat-select formControlName="typeOfSchoolD">
@@ -648,7 +653,7 @@
                     <div class="d-flex">
 
                       <span class="table-sr-no">1.16</span> <span>Affiliation Board of the school for SECONDARY
-                        Sections<sup>&#64;&#64;</sup></span>
+                        Sections</span>
                     </div>
                   </td>
                   <td>
@@ -675,7 +680,7 @@
                 <tr>
                   <td class="d-flex ">
                     <span class="table-sr-no">1.17</span> <span>Affiliation Board of the school for HIGHER SECONDARY
-                      Sections<sup>&#64;&#64;</sup></span>
+                      Sections</span>
                   </td>
                   <td>
                     <mat-select formControlName="affiliateBoardD2">
@@ -702,7 +707,8 @@
                     <div class="d-flex">
 
                       <span class="table-sr-no">1.18</span> <span> Respondent Details :(*Respondent = Person actually
-                        Responsible for filling this form)<sup>##</sup></span>
+                        Responsible for filling this form)
+                      </span>
                     </div>
                   </td>
 
@@ -779,11 +785,11 @@
                     <div class="d-flex">
 
                       <span class="table-sr-no">1.19</span> <span>When does the academic session Start and End
-                        Date?<sup>&#64;&#64;</sup></span>
+                        Date?</span>
                     </div>
                   </td>
                   <td>
-                    <div class="d-flex align-items-center gap-2">
+                    <div class="d-flex align-items-baseline gap-2 justify-content-end my-profile-date">
                       <!-- <input matInput type="date" formControlName="sessionStartDate" placeholder="Enter Start Date"
                         value="" /> -->
                       <mat-form-field appearance="outline" class="w-100">
@@ -816,7 +822,7 @@
                     <div class="d-flex">
 
                       <span class="table-sr-no">1.20</span> <span>Year of Establishment of
-                        school<sup>&#64;&#64;</sup></span>
+                        school</span>
                     </div>
                   </td>
                   <td>
@@ -838,7 +844,8 @@
                   <td colspan="2">
                     <div class="d-flex">
                       <span class="table-sr-no">1.21</span> <span>Year of Recognition (For Govt. Aided / Pvt. Unaided /
-                        Others Management Group Schools): <sup>##</sup></span>
+                        Others Management Group Schools): 
+                      </span>
 
                     </div>
                   </td>
@@ -900,7 +907,8 @@
                 </tr>
                 <tr>
                   <td colspan="2">
-                    <span class="table-sr-no">1.22</span>Year of upgradation of the school (if applicable) <sup>##</sup>
+                    <span class="table-sr-no">1.22</span>Year of upgradation of the school (if applicable) 
+                    
                   </td>
 
                 </tr>
@@ -932,8 +940,7 @@
                         </div>
                       </div>
                       <div class="input-group">
-                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Upper Primary to
-                          Secondary</label>
+                        <label for="" class="form-label"> <span class="table-sr-no">(c)</span> Secondary to Higher secondary </label>
                         <input matInput type="number" formControlName="upgradation_secondary"
                           placeholder="Enter Upper Primary to Secondary" value="" />
                         <div
@@ -954,7 +961,7 @@
                     <div class="d-flex">
 
                       <span class="table-sr-no">1.25</span> <span>Is this a Special School for
-                        CWSN?<sup>&#64;&#64;</sup></span>
+                        CWSN?</span>
                     </div>
                   </td>
                   <td>
