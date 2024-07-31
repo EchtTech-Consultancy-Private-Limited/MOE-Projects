@@ -1,4 +1,10 @@
-<!-- <app-header></app-header> -->
-<app-profile-header></app-profile-header>
-<router-outlet></router-outlet>
-<app-footer class=""></app-footer>
+<ng-container *ngIf="isLoginPage; else profileHeader">
+    <app-header></app-header>
+  </ng-container>
+  <ng-template #profileHeader>
+    <app-profile-header></app-profile-header>
+  </ng-template>
+  
+  <router-outlet></router-outlet>
+  <app-footer class=""></app-footer>
+  

@@ -9,6 +9,32 @@ a{
     text-decoration: none !important;
 }
 ::ng-deep {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .error-message{
+        color: red !important;
+        padding-left: 8px;
+    }
+    .mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper {
+        padding: 0 !important;
+        white-space: nowrap;
+    }
+    mat-label {
+        font-size: 13px;
+        margin-bottom: 9px !important;
+    }
+label.form-label, input, span, .child {
+    font-size: 13px !important;
+    color: #212529;
+}
+.my-profile-date{
+    mat-form-field{
+        max-width: 150px;
+    }
+}
     .cdk-overlay-pane div.mat-mdc-select-panel{
         left: -8px;
         position: absolute;
